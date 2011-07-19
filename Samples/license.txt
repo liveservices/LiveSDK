@@ -1,0 +1,97 @@
+These license terms are between You (“You”) and Microsoft Corporation (“Microsoft”) regarding Your use of the Windows Live Software Development Kit and any associated documentation, software code or other materials made available by Microsoft (collectively referred to in this agreement as the “SDK”). The terms also apply to documentation for the Windows Live application programming interfaces (collectively the “APIs”), which may be further defined separately or in the Windows Live Developer Services Terms of Use available at http://go.microsoft.com/fwlink/?LinkID=95618 (“TOU”), and any software code provided by Microsoft in conjunction with such documentation. The SDK is made available by Microsoft to assist developers in integrating certain functionality of the Windows Live Services (the “Services”) into applications, such as web sites, intranet sites, or personal computer applications. This license applies to any SDK that includes, displays or links to this license, and to any updates, supplements or support services for this SDK, unless other terms accompany those items. If so, those other terms apply.
+
+BY INSTALLING, ACCESSING OR OTHERWISE USING THE SDK, YOU ACCEPT THE TERMS OF THIS LICENSE AGREEMENT AND CONSENT TO THE TRANSMISSION OF CERTAIN COMPUTER INFORMATION DURING USE AND FOR INTERNET-BASED SERVICES. IF YOU DO NOT AGREE TO THE TERMS OF THIS LICENSE AGREEMENT, DO NOT INSTALL, ACCESS OR USE THE SDK OR THE APIS.
+
+If You comply with these license terms, you have the rights below.
+
+
+
+INSTALLATION AND USE RIGHTS.
+
+--------------------------------------------------------------------------------
+
+
+1.Installation and Use. You may install and use any number of copies of the SDK on your devices to design, develop and test your programs. Each copy must be complete, including all copyright and trademark notices. You must require end users to agree to terms of use that protect the SDK as much as these License terms.
+
+2. Subject to Your compliance with this license, You may use the SDK solely for the purpose of creating applications, such as web sites, intranet sites, or personal computer applications, designed to operate with the Windows Live Services (referred to as “Authorized Applications”). You may not charge users of the Authorized Application any fee to access or use the Windows Live Services from within your Authorized Application. You may not rent, lease or lend any of Your rights in the SDK or access to the Services. You may reproduce the SDK, provided that You reproduce only complete copies, including without limitation all “read me” files, copyright notices, and other legal notices and terms that Microsoft has included in the SDK, and provided that You may not distribute any copy You make of the SDK.
+
+3.DISTRIBUTABLE CODE. Unless otherwise provided, if the SDK contains other Microsoft programs, these license terms apply to your use of those programs. The SDK contains code that you are permitted to include in Authorized Applications if You comply with the terms below.
+a.Right to Use and Distribute. The code and text files listed below are “Distributable Code.”
+1.)  REDIST.TXT Files. You may copy and distribute the object code form of code listed in REDIST.TXT files, if any.
+ 2.)  Sample Code. You may modify, copy, and distribute the source code form of code marked as “sample” in the SDK.
+ 3.)  Redistribution. You may permit distributors of Your Authorized Applications to copy and distribute the Distributable Code as part of those applications.
+
+b.Distribution Requirements. For any Distributable Code that You distribute, You must
+ 1.)  require distributors and external end users to agree to terms that protect it at least as much as this license; and
+ 2.)  indemnify, defend, and hold harmless Microsoft from any claims, including attorneys’ fees, related to the distribution or use of Your Authorized Applications.
+
+c.Distribution Restrictions. You may not
+ 1.)  alter any copyright, trademark or patent notice in the Distributable Code;
+ 2.)  use Microsoft’s trademarks in Your applications’ names or in a way that suggests Your applications come from or are endorsed by Microsoft;
+ 3.)  include Distributable Code in malicious, deceptive or unlawful applications; or
+ 4.)  modify, distribute or convey any Distributable Code so that the Distributable Code or any application to which it links, or of which it is a part, becomes subject to an Excluded License. An Excluded License is one that requires, as a condition of license, use, modification, distribution or conveyance, that
+     a)  the code be disclosed or distributed in source code form;
+     b)  others have the right to modify or create derivative works of it; and/or
+     c)  it becomes redistributable at no charge.
+
+
+4.COMMUNITY TECHNOLOGY PREVIEWS. The following additional terms apply to any SDK offered as part of a Community Technology Preview (CTP).
+a. PRE-RELEASE VERSION. This SDK is a pre-release version. It may not operate correctly or work the way a final version of the SDK will. Microsoft may change it for the final, commercial version. We also may not release a commercial version. IF YOU DECIDE TO MAKE USE OF ANY OF THE RIGHTS UNDER THIS LICENSE YOU AGREE THAT IT IS AT YOUR SOLE DISCRETION AND YOU ASSUME ALL RESPONSIBILITY FOR AND RISK OF ANY AND ALL DAMAGES THAT MAY RESULT FROM OR IN CONNECTION WITH THE SDK, INCLUDING WITHOUT LIMITATION, THE UNAVAILABILITY OR INTERRUPTION OF OPERATIONS OR THE LOSS OF ANY DATA OR OTHER CONTENT.
+
+b. Development and Testing Use. If you comply with the rest of these license terms, you may use the SDK to design, develop and test Authorized Applications. You may not distribute the Authorized Application or any Distributable Code in a live production environment unless expressly permitted by Microsoft and solely in distribution channels as authorized by Microsoft.
+
+
+5.INTERNET-BASED SERVICES. Microsoft provides Internet-based services with the SDK. It may change or cancel them at any time. You may not use this SDK or the Services in any way that could harm the Services or impair anyone else’s use of it. You may not use the SDK or the Service to try to gain unauthorized access to any service, data, account or network by any means. Some SDK features connect to Microsoft computer systems over the Internet. In some cases, you will not receive a separate notice when they connect. By using this SDK, you consent to the transmission of this information.
+
+6.ICON LICENSE. Subject to Your compliance with the terms of this license, Microsoft grants You a non-exclusive, non-transferable, worldwide, revocable right to use the icons identified in the Windows Live Branding Guidelines, available at http://go.microsoft.com/fwlink/?LinkId=194564 (“Icons”) solely in an Authorized Application in connection with the Services in accordance with this license and the requirements set forth in the Windows Live Branding Guidelines. All rights not expressly granted herein are reserved by Microsoft. The right to use the Icons as granted herein in no way implies or grants You any rights to distribute any Microsoft products or other intellectual property.
+a.No Sublicensing. You are granted no sublicense right and shall not purport to permit any third party to use the Icons in any manner without Microsoft’s prior written consent.
+
+b.No Use for Merchandising. Your right to use the Icons in connection with Authorized Applications shall not extend to the merchandising or sale of related or promotional products under the Icons.
+
+c.Prohibited Activities. You shall not use the Icons in connection with any activity that (a) disparages Microsoft or its products or services; (b) violates or infringes any intellectual property of Microsoft; or (c) violates any local, state, federal, country, or international regulation or law.
+
+
+7.SCOPE OF LICENSES. The SDK is licensed, not sold. This license only gives You some rights to use the SDK. Microsoft reserves all other rights. Unless applicable law gives You more rights despite this limitation, You may use the SDK only as expressly permitted in this license. In doing so, You must comply with any technical limitations in the SDK that only allow You to use it in certain ways. You may not:
+a. work around any technical limitations in the SDK;
+
+b. reverse engineer, decompile or disassemble the SDK, except and only to the extent that applicable law expressly permits, despite this limitation;
+
+c. make more copies of the SDK than specified in this license or allowed by, except and only to the extent applicable law expressly permits, despite this limitation; or
+
+d. publish the SDK for others to copy.
+
+
+8.USE OF THE SERVICES. Your use of the Services, and the use of the Services by anyone hosting or using your Authorized Application, is governed by the then-current TOUs which can be found on: http://g.msn.com/0TO_/enus. If any SDK for which You are granted rights hereunder make use of the Services (as governed by the applicable TOU), then those SDK rights are granted subject to your compliance with the applicable TOU.
+
+9.EXPORT RESTRICTIONS. THE SDK IS SUBJECT TO UNITED STATES EXPORT LAWS AND REGULATIONS. YOU MUST COMPLY WITH ALL UNITED STATES, AND INTERNATIONAL EXPORT LAWS AND REGULATIONS, WHICH INCLUDE RESTRICTIONS ON DESTINATIONS, END USERS AND END USE. FOR ADDITIONAL INFORMATION, SEE WWW.MICROSOFT.COM/EXPORTING.
+
+10.SUPPORT. Microsoft is not obligated to provide any technical or other support (“Support Services”) for the SDK or Services to You. However, if Microsoft chooses to provide any Support Services to You, Your use of such Support Services will be governed by then-current Microsoft policies. With respect to any technical or other information You provide to Microsoft in connection with the Support Services, You agree that Microsoft has an unrestricted right to use such information for its business purposes, including for product support and development. Microsoft will not use such information in a form that personally identifies You.
+
+11.FEES. Microsoft may choose in the future to charge for use of the SDK, the APIs and/or Services. If Microsoft in its sole discretion chooses to establish fees and payment terms for such use, Microsoft will provide notice of such terms as provided in Section 14 below, and You may elect to stop using the SDK, APIs and/or Services rather than incurring fees.
+
+12.TERMINATION. Microsoft reserves the right to discontinue offering the SDK, APIs and Services or to modify the SDK, APIs or Services at any time in its sole discretion. If You are dissatisfied with any aspect of the SDK, APIs or Services at any time, Your sole and exclusive remedy is to cease using them. Notwithstanding anything contained in the license to the contrary, Microsoft may also, in its sole discretion, terminate or suspend access to the APIs and Services to You or any end user at any time. You acknowledge that termination and/or monetary damages may not be a sufficient remedy if You breach this license and that Microsoft will be entitled, without waiving any other rights or remedies, to injunctive or equitable relief as may be deemed proper by a court of competent jurisdiction in the event of a breach. This Section and Sections 12, 13, 15, 16, 18 and 19 will survive termination of this license or any discontinuation of the offering of the SDK, APIs or Services, along with any other provisions that would reasonably be deemed to survive such events.
+
+13.RESERVATION OF RIGHTS. Except for the licenses expressly granted under this license, Microsoft and its suppliers retain all right, title and interest in and to the SDK, APIs, Services, and all intellectual property rights therein. You are not authorized to alter, modify, copy, edit, format, create derivative works of or otherwise use any materials, content or technology provided under this license except as explicitly provided in this license or approved in advance in writing by Microsoft.
+
+14.MODIFICATIONS; NOTICES. If we change this contract, then we will give you notice before the change is in force. If you do not agree to these changes, then you must cancel and stop using the SDK, Services and APIs before the changes are in force. If you do not stop using the SDK, Services or APIs, then your use of the SDK, Services or APIs will continue under the changed contract. Microsoft may give notices to You, at Microsoft's option, by posting on any portion of http://go.microsoft.com/fwlink/?LinkId=194566 or by electronic mail to any e-mail address provided by You to Microsoft.
+
+15.ENTIRE AGREEMENT. This license, the Windows Live Developer Terms of Use, and the Microsoft Service Agreement (also known as the Windows Live Terms of Service), are the entire agreement with respect to the SDK, the Services and the APIs.
+
+16.APPLICABLE LAW
+a.In the United States. If You acquired the SDK in the United States, Washington state law governs the interpretation of this license and applies to claims for breach of it, regardless of conflict of laws principles. The laws of the state where You live govern all other claims, including claims under state consumer protection laws, unfair competition laws, and in tort.
+
+b.Outside the United States. If you acquired the SDK in any other country, the laws of that country apply.
+
+
+17.LEGAL EFFECT. This agreement describes certain legal rights. You may have other rights under the laws of Your country. This agreement does not change Your rights under the laws of Your country if the laws of Your country do not permit it to do so.
+
+18.DISCLAIMER OF WARRANTY. The SDK is licensed “as-is.” You bear the risk of using it. Microsoft gives no express or implied warranties, guarantees or conditions. You may have additional consumer rights under Your local laws which this agreement cannot change. To the extent permitted under Your local laws, Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and non-infringement.
+
+19.LIMITATION ON AND EXCLUSION OF REMEDIES AND DAMAGES. You can recover from Microsoft and its suppliers only direct damages up to U.S. $5.00. You cannot recover any other damages, including consequential, lost profits, special, indirect or incidental damages.
+This limitation applies to
+a.anything related to the SDK, services, content (including code) on third party Internet sites, or third party programs; and
+
+b.claims for breach of contract, breach of warranty, guarantee or condition, strict liability, negligence, or other tort to the extent permitted by applicable law.
+
+It applies even if Microsoft knew or should have known about the possibility of the damages. The above limitation or exclusion may not apply to You because Your country may not allow the exclusion or limitation of incidental, consequential or other damages.
+
