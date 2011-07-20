@@ -2,7 +2,8 @@ MICROSOFT LIMITED PUBLIC LICENSE
 
 --------------------------------------------------------------------------------
 This license governs use of code marked as "sample" or "example" available on this web site without a license agreement, 
-as provided under the section above titled "NOTICE SPECIFIC TO SOFTWARE AVAILABLE ON THIS WEB SITE." If you use such code (the "software"), you accept this license. If you do not accept the license, do not use the software.
+as provided under the section above titled "NOTICE SPECIFIC TO SOFTWARE AVAILABLE ON THIS WEB SITE." 
+If you use such code (the "software"), you accept this license. If you do not accept the license, do not use the software.
 
 1. Definitions
 
