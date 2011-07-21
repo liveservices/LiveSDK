@@ -1,0 +1,29 @@
+Messenger Connect Samples
+===========================
+
+These samples will show you how to integrate Wincows Live Services into your applications which can span across Windows Phone, Windows Desktop, PHP, ASP.net and other platform.
+
+Except as otherwise noted, the samples is licensed under the Microsoft Limited Public Licensce(http://connect.microsoft.com/terms.aspx#P)
+
+Getting Started
+===============
+Getting started is easy. Just download the samples and run the projects.
+
+Setup Your Environment
+----------------------
+
+* Install [Git](http://git-scm.com/).
+
+* Pull the samples from GitHub:
+
+       git clone https://github.com/liveservices/MessengerConnectSDK.git
+
+Sample Applications
+-------------------
+
+This Github repositories contains samples for:-
+1. Windows Phone
+2. Windows Desktop
+3. PHP
+4. ASP.net
+5. IOS
