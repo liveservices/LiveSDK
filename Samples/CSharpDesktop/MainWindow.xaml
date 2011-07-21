@@ -1,0 +1,14 @@
+﻿<!-- <SnippetLS_Desktop_CS_MainWindowXAML> -->
+    <Window x:Class="DesktopDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Desktop App Demo" Height="500" Width="700" Unloaded="Window_Unloaded">
+    <Grid>
+        <Image Height="110" HorizontalAlignment="Left" Margin="12,12,0,0" Name="imgUser" Stretch="Fill" VerticalAlignment="Top" Width="110" />
+        <TextBlock Height="40" HorizontalAlignment="Left" Margin="12,128,0,0" Name="txtBlock_Name" VerticalAlignment="Top" Width="360" FontFamily="Trebuchet MS" FontSize="32" />
+        <Button Content="Click to Sign In" Height="23" HorizontalAlignment="Center" Margin="262,204,259,0" Name="btnSignIn" VerticalAlignment="Top" Width="157" Click="btnSignIn_Click" />
+        <TextBox Height="172" HorizontalAlignment="Left" Margin="12,244,0,0" Name="txtTokens" VerticalAlignment="Top" Width="654" Visibility="Collapsed" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" />
+        <Button Content="Clear App Settings" Height="23" HorizontalAlignment="Left" Margin="12,426,0,0" Name="btnClear" VerticalAlignment="Top" Width="162" Click="btnClear_Click" />
+    </Grid>
+</Window>
+<!-- </SnippetLS_Desktop_CS_MainWindowXAML> -->

@@ -1,0 +1,10 @@
+﻿<!-- <SnippetLS_Desktop_CS_BrowserWindowXAML> -->
+    <Window x:Class="DesktopDemo.BrowserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Sign In" Height="460" Width="400">
+    <Grid>
+        <WebBrowser Height="420" HorizontalAlignment="Left" Name="webBrowser" VerticalAlignment="Top" Width="380" LoadCompleted="webBrowser_LoadCompleted" />
+    </Grid>
+</Window>
+<!-- </SnippetLS_Desktop_CS_BrowserWindowXAML> -->
