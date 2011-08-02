@@ -21,9 +21,14 @@ Setup Your Environment
 Sample Applications
 -------------------
 
-This Github repositories contains samples for:-
+This Github repositories contains samples for:
+
 * Windows Phone
+
 * Windows
+
 * PHP
+
 * ASP.NET
+
 * iOS
