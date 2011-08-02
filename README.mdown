@@ -22,8 +22,8 @@ Sample Applications
 -------------------
 
 This Github repositories contains samples for:-
-1. Windows Phone
-2. Windows
-3. PHP
-4. ASP.NET
-5. iOS
+* Windows Phone
+* Windows
+* PHP
+* ASP.NET
+* iOS
