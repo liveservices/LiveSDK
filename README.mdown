@@ -1,9 +1,9 @@
 Messenger Connect Samples
 ===========================
 
-These samples will show you how to integrate Windows Live Services into your applications which can span across Windows Phone, Windows, PHP, ASP.NET and other platforms.
+These samples will show you how to integrate Windows Live Services into your applications across Windows Phone, Windows, PHP, ASP.NET and other platforms.
 
-Except as otherwise noted, the samples is licensed under the Microsoft Limited Public License (http://connect.microsoft.com/terms.aspx#P).
+Except as otherwise noted, the samples are licensed under the Microsoft Limited Public License (http://connect.microsoft.com/terms.aspx#P).
 
 Getting Started
 ===============
@@ -21,7 +21,7 @@ Setup Your Environment
 Sample Applications
 -------------------
 
-This Github repositories contains samples for:
+This Github repository contains samples for:
 
 * Windows Phone
 
