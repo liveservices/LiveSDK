@@ -16,7 +16,7 @@ Setup Your Environment
 
 * Pull the samples from GitHub:
 
-       git clone https://github.com/liveservices/MessengerConnectSDK.git
+       git clone https://github.com/liveservices/LiveSDK.git
 
 Sample Applications
 -------------------
