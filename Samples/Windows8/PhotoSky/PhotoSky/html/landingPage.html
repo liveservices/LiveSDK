@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>landingPage</title>
+    
+    <!-- WinJS references -->
+    <link rel="stylesheet" href="/winjs/css/ui-dark.css" />
+    <script type="ms-deferred/javascript" src="/winjs/js/base.js"></script>
+    <script type="ms-deferred/javascript" src="/winjs/js/ui.js"></script>
+
+    <script type="ms-deferred/javascript" src="/winjs/js/binding.js"></script>
+    <script type="ms-deferred/javascript" src="/winjs/js/controls.js"></script>
+    <script type="ms-deferred/javascript" src="/winjs/js/animations.js"></script>
+    <script type="ms-deferred/javascript" src="/winjs/js/uicollections.js"></script>
+    <script type="ms-deferred/javascript" src="/winjs/js/wwaapp.js"></script>
+    
+    <link rel="stylesheet" href="/css/default.css" />
+    <link rel="stylesheet" href="/css/landingPage.css" />
+    <link rel="stylesheet" href="/css/userProfile.css" />
+    <script type="ms-deferred/javascript" src="/js/landingPage.js"></script>
+</head>
+<body>
+    <!-- These templates are used to display each item in the ListView declared below. -->
+    <div class="headerTemplate" data-win-control="WinJS.Binding.Template">
+        <h1 class="win-contentTitle" data-win-bind="onclick: click; textContent: title" tabindex="0" role="link"></h1>
+    </div>
+   <div class="listTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="largeTileTextTemplate">
+            <div class="largeTileTextTemplateBackground" data-win-bind="style.backgroundColor: backgroundColor"></div>
+            <div class="largeTileTextTemplateOverlay">
+                <div class="largeTileTextTemplateLargeText" data-win-bind="textContent: title"></div>
+                <div class="largeTileTextTemplateSmallTextList" data-win-bind="textContent: description"></div>
+            </div>
+        </div>
+    </div>
+    <div class="itemTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="largeTileTextTemplate">
+            <img class="largeTileTextTemplateBackground" data-win-bind="src: background"></img>
+            <div class="largeTileTextTemplateOverlay">
+                <div class="largeTileTextTemplateLargeText" data-win-bind="textContent: title"></div>
+                <div class="largeTileTextTemplateSmallText" data-win-bind="textContent: subtitle"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment landingPage">
+        <header role="banner" aria-label="Header content">
+            <button disabled class="win-backbutton" aria-label="Back"></button>
+            <div class="titleArea" style="width: 689px;">
+                <h1 class="pageTitle win-title">PhotoSky</h1>
+            </div>
+        </header>
+        <div id="signinbutton" style="width: 251px; margin-left: auto; margin-top: 40%; height: 64px; top: 0px;"></div>
+    	<div id="userProfileDiv" style="height: 64px; width: 700px; left: 722px; margin-left: auto; margin-right: 20%;" >
+            <table border="0">
+                <tr class="header" >
+                    <td style="width: 600px;margin-top: 50%; height: 64px; top: 0px; ">
+                        <span id="meName" class="meName" >Please Sign In</span>
+                    </td>
+                    <td>
+                        <img id="meImg" class="meImg" alt="" src="" style="visibility:collapse;"/>
+                    </td>
+                </tr>
+            </table>
+    	</div>
+        <section role="main" aria-label="Main content">
+            <div class="landingList"
+                 data-win-control="WinJS.UI.ListView"
+                 data-win-options="{layout: {type: WinJS.UI.GridLayout, groupHeaderPosition: 'top'}, selectionMode: 'none'}"
+                 aria-label="Collections">
+            </div>
+        </section>
+    </div>
+</body>
+</html>

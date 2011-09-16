@@ -1,0 +1,2093 @@
+ 
+/*
+  © Microsoft. All rights reserved.
+
+  This library is supported for use in Windows Tailored Apps only.
+
+  Build: 6.2.8100.0 
+  Version: 0.5 
+*/
+ 
+/* Base ***************************************************************/
+html, body
+{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    font: 11pt/15pt "Segoe UI Semilight";
+    letter-spacing: 0.02em;
+    -ms-content-zooming: none;
+    overflow: hidden;
+}
+
+iframe 
+{
+    border: 0;
+}
+
+/* Typography - HTML Tags ***************************************************************/
+abbr, acronym, address, blockquote, cite, dl, dt, li, ol, p, q, td, tr
+{
+    font-family: "Segoe UI Semilight"; /* Uses default sizes 11pt/15pt */
+}
+
+caption, figcaption, small
+{
+    font-family: "Segoe UI"; /* Uses default sizes 11pt/15pt */
+    font-size: 9pt;
+    line-height: 15pt;
+}
+
+code, pre, samp
+{
+    font-family: "Consolas"; /* Uses default sizes 11pt/15pt */
+}
+
+dd, th
+{    
+    font-family: "Segoe UI"; 
+    /* Uses default sizes 11pt/15pt */
+    font-weight: bold;
+}
+
+em
+{
+    font-style: italic;
+    /* Uses default sizes whatever sizes it inherits from */
+}
+
+h1
+{
+    font-family: "Segoe UI Light";
+    font-size: 42pt;
+    line-height: 48pt;
+}
+
+h2
+{
+    font-family: "Segoe UI Light";
+    font-size: 20pt;
+    line-height: 24pt;
+}
+
+h3
+{
+    font-family: "Segoe UI";
+    /* Uses default sizes 11pt/15pt */
+}
+
+h4
+{
+    font-family: "Segoe UI Semibold";
+    /* Uses default sizes 11pt/15pt */
+}
+
+h5
+{
+    font-family: "Segoe UI";
+    font-size: 9pt;
+    /* Uses default line-height 15pt */
+}
+
+h6
+{
+    font-family: "Segoe UI Semibold";
+    font-size: 9pt;
+    /* Uses default line-height 15pt */
+}
+
+/* Typography - Additional ***************************************************************/
+.win-title
+{
+    font: 42pt/48pt "Segoe UI Light";
+}
+
+.win-contentTitle
+{
+    font: 20pt/24pt "Segoe UI Semilight";
+}
+
+.win-contentSubtitle
+{
+    font: 20pt/24pt "Segoe UI Light";
+}
+
+.win-contentCaption
+{
+    font: 9pt/15pt "Segoe UI";
+}
+
+.win-body, .win-itemText
+{
+    font: 11pt/15pt "Segoe UI";
+}
+
+.win-itemText
+{
+    font: 11pt/15pt "Segoe UI";
+    overflow: hidden;
+}
+
+.win-itemTitle
+{
+    font: 20pt/24pt "Segoe UI Semilight";
+}
+
+.win-overlayItemText
+{
+    font: 11pt/15pt "Segoe UI Semilight";
+    overflow: hidden;
+}
+
+.win-itemSubtitle
+{
+    font: 11pt/15pt "Segoe UI Semibold";
+}
+
+.win-alpha
+{
+    font: 42pt/48pt "Segoe UI Semilight";
+}
+
+.win-day
+{
+    font: 11pt/15pt "Segoe UI Semilight";
+}
+
+.win-date
+{
+    font: 20pt/24pt "Segoe UI Semibold";
+}
+
+/*-----------------------------------------------------------------------------  
+    Back button
+-----------------------------------------------------------------------------*/
+.win-backbutton
+{
+    display: inline-block;
+    min-width: 0px;
+    min-height: 0px;
+    background-clip: border-box;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0px;
+
+    /* Normal sizing */
+    margin-right: 34px;
+    width: 40px;
+    height: 40px;
+    font-size: 14pt;
+    line-height: 36px; /* line-height must match the content box height */
+    vertical-align: baseline;
+}
+
+.win-backbutton:hover, .win-backbutton:active, .win-backbutton:hover:active
+{
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+.win-backbutton::before
+{
+    font-family: "Segoe UI Symbol";
+    content: "\E0D5";
+    vertical-align: 50%;
+}
+
+.win-backbutton:disabled, .win-backbutton:hover:active:disabled
+{
+    background-clip: padding-box;
+}
+
+/*-----------------------------------------------------------------------------  
+    View: Snapped
+    This view is when your application is snapped to the side of your device 
+    and another application is taking up the rest of the screen space.
+-----------------------------------------------------------------------------*/
+@media screen and (-ms-view-state: snapped)
+{
+    .win-title
+    {
+        font: 20pt/24pt "Segoe UI Light";    
+    }
+
+    .win-contentTitle
+    {
+        font: 11pt/15pt "Segoe UI Semibold";    
+    }
+
+    .win-contentSubtitle
+    {
+        font: 11pt/15pt "Segoe UI Light";    
+    }
+
+    .win-backbutton
+    {
+        width: 30px;
+        height: 30px;
+        margin-right: 7px;
+        font-size: 10pt;
+        line-height: 26px; /* line-height must match the content box height */
+        vertical-align: -0.37em;
+    }
+}
+
+
+/* Controls ***************************************************************/
+
+/*-----------------------------------------------------------------------------  
+    textbox and textarea
+-----------------------------------------------------------------------------*/
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=tel], input[type=url], input[type=search],
+textarea, div[contenteditable]
+{
+    width: 256px;
+    min-height: 20px;
+    min-width: 64px;
+    padding: 4px 8px 4px 8px;
+    border-width: 2px;
+    border-style: solid;
+    font: 11pt "Segoe UI";
+    letter-spacing: 0.02em;
+    background-clip: padding-box;
+    margin: 4px 0px;
+}
+
+input[type=text]::-ms-clear, input[type=password]::-ms-reveal
+{
+    display: inline-block;
+}
+
+/*-----------------------------------------------------------------------------  
+    button  
+-----------------------------------------------------------------------------*/
+button, input[type=button], input[type=reset], input[type=submit]
+{
+    min-height: 32px; /* content (20px) + Padding + Border */
+    min-width: 90px;
+    padding: 4px 8px 4px 8px;
+    border-width: 2px;
+    border-style: solid;
+    font-family: "Segoe UI Semibold";
+    font-size: 11pt;
+    letter-spacing: 0.02em;   
+    background-clip:padding-box;
+}
+
+/*-----------------------------------------------------------------------------  
+    file upload  
+-----------------------------------------------------------------------------*/
+input[type=file]
+{
+    font: 11pt "Segoe UI";
+    padding: 4px 0px 4px 8px;
+    margin: 4px 0px;
+    border-width: 2px;
+    border-style: solid;
+    width: 268px;
+    min-width: 64px;   
+    min-height: 20px;
+    background-clip: padding-box;
+}
+
+/*-----------------------------------------------------------------------------  
+link  
+-----------------------------------------------------------------------------*/
+a
+{
+    text-decoration: none;
+}
+
+/*-----------------------------------------------------------------------------  
+image
+Remove borders from images to prevent border outline when it’s part of a link.
+-----------------------------------------------------------------------------*/
+img
+{
+    border: 0px;
+}
+
+/*-----------------------------------------------------------------------------  
+    select  
+-----------------------------------------------------------------------------*/
+select
+{
+    min-height: 20px;
+    min-width: 80px;
+    border-width: 2px;
+    border-style: solid;
+    background-clip: padding-box;
+    margin: 4px 0px;
+    font: 11pt "Segoe UI";
+    letter-spacing: 0.02em;
+}
+
+select::-ms-value
+{
+    padding: 4px 8px 4px 8px;
+}
+
+select::-ms-expand
+{
+    border: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: transparent;
+}
+
+option
+{
+    font-family: "Segoe UI";
+    letter-spacing: 0.02em;
+}
+
+optgroup
+{
+    /* this style is not being picked up */
+    font: 11pt "Segoe UI Semibold";
+    letter-spacing: 0.02em;
+}
+
+
+/*-----------------------------------------------------------------------------  
+   radio button and checkbox shared styles
+-----------------------------------------------------------------------------*/
+input[type=radio], input[type=checkbox]
+{
+    padding-bottom: 0px;
+    margin-bottom: -2px;
+} 
+
+input[type=radio]::-ms-check, input[type=checkbox]::-ms-check
+{
+    border-width: 2px;
+    border-style: solid;
+}
+
+/*-----------------------------------------------------------------------------  
+   radio button  
+-----------------------------------------------------------------------------*/
+input[type=radio]
+{
+    width: 23px;
+    height: 23px;
+    margin-left: -1px;
+    padding-right: 6px;
+}
+
+/*-----------------------------------------------------------------------------  
+    checkbox  
+-----------------------------------------------------------------------------*/
+input[type=checkbox] 
+{
+    width: 21px;
+    height: 21px;
+    padding-right: 8px;
+}
+
+/*-----------------------------------------------------------------------------  
+    input range  
+-----------------------------------------------------------------------------*/
+input[type=range]
+{
+    width: 280px;
+    height: 11px;
+    padding: 17px 0px 32px 0px;
+}
+
+input[type=range]::-ms-track
+{
+    padding: 0px;
+}
+
+input[type=range]:disabled::-ms-fill-upper
+{
+    margin-left: 6px;
+}
+
+input[type=range]:disabled::-ms-fill-lower
+{
+    margin-right: 5px;
+}
+
+input[type=range]::-ms-thumb
+{
+    width: 11px;
+}
+
+input[type=range]::-ms-ticks-before, input[type=range]::-ms-ticks-after
+{
+    height: 5px;
+    display: none;
+}
+
+/*vertical slider*/
+input[type=range].win-verticalSlider
+{
+    width: 11px;
+    height: 191px;
+    padding: 0px 17px 0px 17px;
+}
+
+input[type=range].win-verticalSlider::-ms-track
+{
+    height: 191px;
+}
+
+/*-----------------------------------------------------------------------------  
+    progress  
+-----------------------------------------------------------------------------*/
+progress
+{
+    width: 280px;
+    height: 10px;
+}
+
+progress::-ms-fill
+{
+    background-color: currentColor;
+}
+
+progress:indeterminate
+{
+    background-color: transparent;
+}
+
+@-ms-keyframes win-progress-fade-out
+{
+    from 
+    {
+        opacity: 1.0;
+    }
+    to 
+    {
+        opacity: 0.5;
+    }
+}
+
+
+/*-----------------------------------------------------------------------------  
+    Form
+-----------------------------------------------------------------------------*/
+form 
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+/*-----------------------------------------------------------------------------  
+    Control groups (radio, checkbox button group)
+-----------------------------------------------------------------------------*/
+legend
+{
+    font: 11pt/15pt "Segoe UI Semilight";
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    color: inherit;
+}
+
+/* zIndex is interesting: */
+/* 999 - appbar */
+/* 1000 - flyout click eating div */
+/* 1001 - flyout */
+
+/* Command Buttons */
+button.win-command
+{
+    background: none;
+    height: auto; /* height is 88 (label) or 68 (no label) */
+    padding: 14px 0px 14px 0px; /* bottom dependent on label/img */
+    margin: 0px;
+    border: 0px;
+    min-width: 40px;
+
+    /* Font */
+    font-family: Segoe UI;
+    text-align: center;
+    font-size: 9pt;
+    line-height: 16px;
+}
+
+button.win-command:hover
+{
+    background-color: transparent;
+}
+
+button.win-command:active
+{
+    background-color: transparent;
+    color: inherit;
+}
+
+button.win-command:hover:active
+{
+    background-color: transparent;
+    color: inherit;
+}
+
+button.win-command:disabled
+{
+    border-color: transparent;
+    background-color: transparent;
+}
+
+/* Command Button Icons */
+.win-commandicon
+{
+    display: inline-block;
+    margin: 0px 30px; /* padding for command buttons */    
+    min-width: 0px;
+    min-height: 0px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    padding: 0px;
+
+    /* Normal sizing */
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    background-origin: border-box;
+
+    /* Default Font for Glyphs */
+    font-family: "Segoe UI Symbol";
+    /* Applications provide their own content, like &#xE0D5; */
+    vertical-align: middle;
+    font-size: 8pt;
+    line-height: 26px; /* line-height must match the content box height */    
+}
+
+.win-commandicon.win-large
+{
+    width: 40px;
+    height: 40px;
+    font-size: 14pt;
+    line-height: 36px; /* line-height must match the content box height */
+}
+
+button.win-command:hover .win-commandicon, button:active .win-commandicon
+{
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+}
+
+button.win-command:hover:active .win-commandicon
+{
+    border-width: 2px;
+    border-style: solid;
+}
+
+button.win-command:disabled .win-commandicon
+{
+    background-clip: padding-box;
+}
+
+
+/* Command Button Labels */
+button.win-command .win-label
+{
+    position: relative;
+    height: 20px;
+    display: block;
+    max-width: 100px;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    top: 3px;
+}
+
+button.win-command:disabled .win-label
+{
+    opacity: .49;
+}
+
+/* AppBar Itself */
+.win-appbar
+{
+    /* Base Style */
+    z-index: 1001;
+
+    /* Background */
+    border-width: 0px;
+
+    /* Default Style */
+    width: 100%;
+    height: auto;
+    min-height: 68px;
+    left: 0px;
+    position: fixed;
+}
+
+/* AppBar Separator */
+.win-appbar hr
+{
+    display: inline-block;
+    padding: 0px;
+    margin: 14px 29px 0px 30px;
+    width: 1px;
+    height: 40px;
+    border: 0px;
+    vertical-align: top;    
+
+    /* Same color in both light and dark */
+    background-color: #707070;
+}
+
+/* Specific AppBar Parts */
+.win-appbar .win-left
+{
+    padding-left: 30px;
+    float: left;
+    vertical-align: middle;
+    font-size: 11pt;
+}
+/* Used in bottom command appbar snippet */
+.win-appbar .win-right
+{
+    font-size: 11pt;
+    padding-right: calc(((100% + 10px) mod 20px) + 20px);
+    float: right;
+    text-align: right;
+}
+
+/* Section Styles, RTL */
+body[dir=rtl] .win-appbar .win-left
+{
+    float: right;
+    padding-right: calc(((100% + 10px) mod 20px) + 20px);
+    padding-left: 0px;    
+}
+body[dir=rtl] .win-appbar .win-right
+{
+    float: left;
+    text-align: left;
+    padding-right: 0px;
+    padding-left: 30px;
+}
+
+/* Snapped Appbar */
+@media all and (-ms-view-state: snapped)
+{
+    .win-appbar .win-left
+    {
+        padding-left: 10px;
+    }
+
+    .win-appbar .win-right
+    {
+        padding-right: 10px;
+    }
+}
+
+/* Used in top appbar snippet */
+.win-navigation
+{
+    float: left;
+    padding-top: 60px;
+    padding-left: 40px;
+    padding-bottom: 40px;
+}
+
+/* Used in top appbar snippet */
+.win-appbar .win-title
+{
+    margin-left: 120px;
+    margin-top: 40px;
+    padding-right: 40px;
+    vertical-align: middle;
+    font: 42pt/48pt "Segoe UI Semilight";
+    line-height: 71px;
+}
+
+/* Section Styles, RTL */
+body[dir=rtl] .win-navigation
+{
+    float: right;
+    padding-right: 40px;
+    padding-left: 0px;
+}
+body[dir=rtl] .win-appbar .win-title
+{
+    margin-left: 0px;
+    margin-right: 120px;
+    padding-right: 0px;
+    padding-left: 40px;
+}
+
+/* Make Appbar Back Button correct size */
+.win-navigation .win-backbutton.win-large
+{
+    width: 40px;
+    height: 40px;
+}
+
+/* Make Appbar Back Button correct size */
+.win-navigation .win-backbutton.win-large::before
+{
+    font-size: 14pt;
+    line-height: 36px; /* line-height must match the content box height */
+}
+
+/* Portrait Style */
+@media all and (-ms-view-state: portrait)
+{
+    .win-navigation button
+    {
+        margin-left: -10px;
+    }
+
+    .win-appbar .win-title
+    {
+        padding-right: 30px;
+        margin-left: 100px;
+    }
+
+    body[dir=rtl] .win-navigation button
+    {
+        margin-left: 0px;
+        margin-right: -10px;
+    }
+
+    body[dir=rtl] .win-appbar .win-title
+    {
+        float: right;
+        margin-left: 0px;
+        margin-right: 100px;
+        padding-right: 0px;
+        padding-left: 30px;
+    }
+}
+
+/* Snapped Style */
+@media all and (-ms-view-state: snapped)
+{
+    .win-navigation button
+    {
+        margin-left: -20px;
+    }
+
+    body[dir=rtl] .win-navigation button
+    {
+        margin-left: 0px;
+        margin-right: -20px;
+    }
+
+    .win-appbar .win-title
+    {
+        padding-right: 10px;
+        margin-left: 80px;
+        font: 20pt/24pt "Segoe UI Semilight";
+        margin-top: 78px;
+        line-height: 20px;
+    }
+
+    body[dir=rtl] .win-appbar .win-title
+    {
+        float: right;
+        margin-left: 0px;
+        margin-right: 80px;
+        padding-right: 0px;
+        padding-left: 10px;
+    }
+}
+
+/* Flyout Itself */
+.win-flyout
+{
+    /* Default Style */
+    z-index: 1001;
+    position: fixed;
+    padding: 25px 20px 20px 20px;
+    border-style: solid;
+    border-width: 2px;
+    margin: 20px;
+    min-width: 100px;
+    max-width: 320px;
+    line-height: 15pt;
+    text-align: left; /* Set explicitly in case our parent has different alignment, like appbar overflow */
+
+    /* Font */
+    font-family: Segoe UI Semibold;
+    font-size: 11pt;
+    max-width: 288px; /* 320 - padding = 288 */
+    min-height: 68px; /* 80 - padding = 68 */
+}
+
+/* Menu Version */
+.win-flyout.win-menu
+{
+    padding: 5px 0px 7px 0px;
+    line-height: 33px;
+}
+
+/* Flyout content */
+.win-flyout .win-contentTitle
+{
+    margin-top: -13px;
+    padding-bottom: 18px;
+}
+
+.win-flyout hr
+{
+    display: block;
+    margin: 11px 0px 8px 0px;
+    height: 1px;
+    width: auto;
+    border: 0px;
+
+    /* Same in both light and dark themes */
+    background-color: #707070;
+}
+
+.win-flyout button,
+.win-flyout input[type="button"]
+{
+    margin-top: 16px;
+    margin-left: 20px;
+    float: right;
+}
+
+/* Flyout Styles, RTL */
+body[dir=rtl] .win-flyout
+{
+    text-align: right; /* Set explicitly in case our parent has different alignment, like appbar overflow */
+}
+
+body[dir=rtl] .win-flyout button,
+body[dir=rtl] .win-flyout input[type="button"]
+{
+    float: left;
+    margin-left: 0px;
+    margin-right: 20px;
+}
+
+/* Flyout Menu Style */
+.win-menu button,
+.win-menu input[type="button"]
+{
+    display: block;
+    border: none;
+    padding: 0px 16px 0px 16px;
+    margin-left: 0px;
+    line-height: 33px;
+    float: none;
+    background-color: transparent;
+    text-align: left;
+    width: 100%;
+}
+
+.win-menu hr
+{
+    padding: 0px;
+    margin: 11px 16px 8px 16px;
+}
+
+body[dir=rtl] .win-menu button,
+body[dir=rtl] .win-menu input[type="button"]
+{
+    float: inherit;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Settings Pane */
+.win-settingspane
+{
+    /* Base Style */
+    z-index: 1001;
+    overflow: auto;
+
+    /* Background */
+    border-style: solid;
+    border-width: 2px;
+
+    /* Font */
+    /* Use Default */
+
+    /* Default Style */
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    height: calc(100% - 34px); /* 100% - padding (30) - border (4) */
+    width: 266px; /* 350 -40 -40 -2 -2 */
+
+    /* Default Margins */
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+}
+
+.win-settingspane.win-wide
+{
+    width: 566px; /* 650 -40 -40 -2 -2 */
+}
+
+.win-settingspane .win-label
+{
+    /* Font */
+    font-family: Segoe UI;
+    font-size: 20pt;
+    margin: -1px 0px 36px 0px;
+    line-height: normal;
+}
+
+/* Overlay Styles, RTL */
+body[dir=rtl] .win-settingspane
+{
+    right: auto;
+    left: 0px;
+}
+
+/* Rating Control ******************************************************************/
+.win-rating
+{
+    display: -ms-inline-box;
+    height: auto;
+    width: auto;
+    -ms-box-align: stretch;
+    -ms-box-pack: center;
+}
+
+
+.win-rating-star
+{
+    -ms-box-flex: 1;
+    height: 28px;
+    width: 28px;
+    font-family: "Segoe UI Symbol";
+    font-size: 28px;
+    overflow: hidden;
+    text-indent: 0px;
+    line-height: 100%;
+    cursor: pointer;
+}
+
+.win-rating.win-small .win-rating-star
+{
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    padding: 0px 3px;
+}
+
+.win-rating-star:before
+{
+    content: "\E082";
+}
+
+.win-rating-user-full
+{
+    color: rgba(38, 160, 218, 1.0);
+}
+
+.win-rating-tentative-full
+{
+    color: rgb(90, 183, 227);
+}
+
+.win-rating-disabled-empty, .win-rating-disabled-full
+{
+    cursor: default;
+}
+
+.win-rating-user-empty, .win-rating-tentative-empty, .win-rating-average-empty, .win-rating-disabled-empty
+{
+    opacity: 0.3;
+}
+
+/* DatePicker ******************************************************************/
+.win-datepicker select
+{
+    padding-left: 2px;
+    min-width: 80px;
+}
+.win-datepicker-month
+{
+    margin-right: 20px;
+}
+.win-datepicker-date
+{
+    margin-right: 20px;
+}
+*[dir=rtl] .win-datepicker select,
+.win-datepicker[dir=rtl] select
+{
+    padding-left: 0px;
+    padding-right: 2px;
+}
+*[dir=rtl] .win-datepicker-month
+{
+    margin-right: 0px;
+    margin-left: 20px;
+}
+*[dir=rtl] .win-datepicker-date
+{
+    margin-right: 0px;
+    margin-left: 20px;
+}
+
+/* TimePicker ******************************************************************/
+.win-timepicker select
+{
+    padding-left: 2px;
+    min-width: 80px;
+}
+.win-timepicker-hour
+{
+    margin-right: 20px;
+}
+.win-timepicker-minute
+{
+    margin-right: 20px;
+}
+*[dir=rtl] .win-timepicker select,
+.win-timepicker[dir=rtl] select
+{
+    padding-left: 0px;
+    padding-right: 2px;
+}
+*[dir=rtl] .win-timepicker-hour
+{
+    margin-right: 0px;
+    margin-left: 20px;
+}
+*[dir=rtl] .win-timepicker-minute
+{
+    margin-right: 0px;
+    margin-left: 20px;
+}
+/* Toggle **********************************************************************/
+.win-toggle
+{
+    display: inline-block;
+    padding: 0px;
+    background-color: transparent;
+    height: 50px;
+    vertical-align: top;
+    margin: 0px;
+    display: block;
+}
+
+input[type=range].win-toggle-switch
+{
+    display: inline-block;
+    height: 19px;
+    width: 50px;
+    padding: 5px 5px 5px 5px;
+    margin: 0px;
+    background-color: transparent;
+}
+
+input[type=range].win-toggle-switch::-ms-tooltip
+{
+    display: none;
+}
+
+input[type=range].win-toggle-switch::-ms-ticks-before
+{
+    display: none;
+}
+input[type=range].win-toggle-switch::-ms-track
+{
+    height: 15px;
+    width: 46px;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+}
+input[type=range].win-toggle-switch::-ms-fill-lower
+{
+    height: 13px;
+    margin: 1px;
+    padding: 0px;
+    background-color: rgb(59, 172, 230);
+    border-width: 1px;
+    border-style: solid;
+}
+
+input[type=range].win-toggle-switch::-ms-fill-upper
+{
+    height: 13px;
+    padding: 0px;
+    margin: 1px;
+    border: 1px solid transparent;
+}
+input[type=range].win-toggle-switch::-ms-thumb
+{
+    height: 19px;
+    width: 13px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.win-toggle-title
+{
+    display: block;
+    font-size: 11pt;
+    vertical-align: top;
+}
+.win-toggle-label-on, .win-toggle-label-off
+{
+    display: inline-block;
+    /*height: 20px;*/
+    width: 125px;
+    font-family: "Segoe UI Semibold";
+    font-size: 11pt;
+    vertical-align: top;
+    padding: 5px 0px 5px 0px;
+}
+
+/* Tooltip ******************************************************************/
+.win-tooltip
+{
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    max-width: 30em;
+    margin: 0px 0px 0px 0px;
+    padding: 7px 12px 8px 12px;
+    background-color: rgb(255, 255, 255);
+    border: 1px rgb(33, 33, 33) solid;
+    font-family: "Segoe UI";
+    color: rgb(33, 33, 33);
+    z-index: 9999;
+}
+
+.win-tooltip-phantom
+{
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-width: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.win-tooltip .win-text-domain
+{
+    color: rgb(112, 112, 112);
+}
+
+.win-tooltip.win-animation-appear
+{
+    -ms-animation-name: win-tooltip-fade-in;
+    -ms-animation-duration: 0.5s;
+    -ms-animation-timing-function: cubic-bezier(0.03, 0.76, 0.31, 1.0);
+}
+
+@-ms-keyframes win-tooltip-fade-in{
+    from 
+    {
+        opacity: 0.0;
+    }
+    to 
+    {
+        opacity: 1.0;
+    }
+}
+
+.win-tooltip.win-animation-disappear
+{
+    -ms-animation-name: win-tooltip-fade-out;
+    -ms-animation-duration: 0.5s;
+    -ms-animation-timing-function: cubic-bezier(0.03, 0.76, 0.31, 1.0);
+}
+
+@-ms-keyframes win-tooltip-fade-out {
+    from
+    {
+        opacity: 1.0;
+    }
+    to 
+    {
+        opacity: 0.0;
+    }
+}
+
+.win-viewbox
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.win-semanticzoom
+{
+    height: 400px;
+}
+
+.win-listView
+{
+    overflow: hidden;
+    height: 400px;
+}
+
+.win-listView .win-scrollable
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.win-listView > .win-viewport
+{
+    position: relative;
+}
+
+.win-listView > .win-viewport.win-horizontal
+{
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.win-listView > .win-viewport.win-vertical
+{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.win-listView .win-item
+{
+    cursor: default;
+    overflow: hidden;
+}
+
+.win-listView .win-item.win-selected 
+{
+    background-color: rgb(38, 160, 218);
+}
+
+.win-listView .win-item.win-selected.win-hover
+{
+    background-color: rgb(90, 183, 227);
+}
+
+.win-listView .win-item.win-pressed 
+{
+}
+
+.win-inTransit
+{
+    opacity: 0.8;
+}    
+
+.win-inTransitOverlay
+{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(38, 160, 218);
+    opacity: 0;
+}
+
+.win-inTransitNumber
+{
+    position: absolute;
+    margin: 12px 12px;
+    padding: 0 0;
+    font-family: Segoe UI Light;
+    font-size: 42pt;
+    vertical-align: top;
+    line-height: 26pt;
+}
+
+.win-listView .win-groupHeader
+{
+    padding: 10px;
+    cursor: default;
+    overflow: hidden;
+    margin-left: 70px;
+    font-family: Segoe UI Semilight;
+    font-size: 20pt;
+    letter-spacing: 0.02em;
+    line-height: 24pt;
+}
+
+.win-listView .win-groupHeader:first-child
+{
+    margin-left: 0px;
+}
+
+.win-listView.win-rtl .win-groupHeader
+{
+    margin-left: 0px;
+    margin-right: 70px; 
+}
+
+.win-listView.win-rtl .win-groupHeader:first-child
+{
+    margin-right: 0px; 
+}
+
+.win-selection-background
+{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 0px;
+    height: 0px;
+    margin: 0 0;
+    padding: 0 0;
+    border-top: solid 20px rgb(38, 160, 218);
+    border-right: solid 20px rgb(38, 160, 218);
+    border-left: solid 20px transparent;
+    border-bottom: solid 20px transparent;
+}
+
+.win-listView .win-hover .win-selection-background
+{
+    border-top: solid 20px rgb(90, 183, 227);
+    border-right: solid 20px rgb(90, 183, 227);
+}
+
+.win-rtl .win-selection-background
+{
+    left: 1px;
+    right: auto;
+    border-top: solid 20px rgb(38, 160, 218);
+    border-left: solid 20px rgb(38, 160, 218);
+    border-right: solid 20px transparent;
+    border-bottom: solid 20px transparent;
+}
+
+.win-selection-checkmark
+{
+    position: absolute;
+    margin: 0 0;
+    padding: 4px 4px;
+    right: 0px;
+    color: White;
+    font-family: Segoe UI Symbol;
+    font-size: 11pt;
+}
+
+.win-rtl .win-selection-checkmark
+{
+    left: 0px;
+    right: auto;
+}
+
+.win-selection-hint
+{
+    position: absolute;
+    margin: 0 0;
+    padding: 0;
+    right: 0px;
+    font-family: Segoe UI Symbol;
+    font-size: 11pt;
+    color: rgb(38, 160, 218);
+    opacity: 0.5;
+}
+
+.win-selection-hint.win-revealed
+{
+    opacity: 1;
+}
+ 
+.win-rtl .win-selection-hint
+{
+    left: 0px;
+    right: auto;
+}
+
+.win-listView .win-progressbar
+{
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    z-index: 1;
+    position: absolute;
+}
+
+@media screen and (-ms-high-contrast)
+{
+    .win-listView .win-item.win-hover
+    {
+        -ms-high-contrast-adjust: none;
+        background-color: ThreeDShadow; 
+        color: WindowText;
+    }
+
+    .win-listView .win-item.win-selected 
+    {
+        -ms-high-contrast-adjust: none;
+        background-color: Highlight;
+        color: WindowText;
+    }
+
+    .win-listView .win-item.win-selected.win-hover
+    {
+        -ms-high-contrast-adjust: none;
+        background-color: Highlight;
+        color: WindowText;
+    }
+    
+    .win-inTransitOverlay
+    {
+        -ms-high-contrast-adjust: none;
+        background-color: Highlight;
+    }
+
+    .win-listView .win-groupHeader
+    {
+        -ms-high-contrast-adjust: none;
+        color: WindowText;
+    }
+
+    .win-selection-background
+    {
+        -ms-high-contrast-adjust: none;
+        border-top: solid 20px Highlight;
+        border-right: solid 20px Highlight;
+        border-left: solid 20px transparent;
+        border-bottom: solid 20px transparent;
+    }
+
+    .win-listView .win-hover .win-selection-background
+    {
+        -ms-high-contrast-adjust: none;
+        border-top: solid 20px Highlight;
+        border-right: solid 20px Highlight;
+    }
+
+    .win-rtl .win-selection-background
+    {
+        -ms-high-contrast-adjust: none;
+        border-top: solid 20px Highlight;
+        border-left: solid 20px Highlight;
+        border-right: solid 20px transparent;
+        border-bottom: solid 20px transparent;
+    }
+    
+    .win-selection-hint
+    {
+        -ms-high-contrast-adjust: none;
+        color: WindowText;
+    }
+}
+
+/* flip view ********************************************************/
+.win-flipView
+{
+    overflow: hidden;
+}
+
+.win-flipView button.win-navbutton
+{
+    border: none;
+    width: 69px;
+    height: 39px;
+    z-index: 1;
+    position: absolute;
+    font-family: "Segoe UI Symbol";
+    font-size: 24px;
+    padding: 0px;
+    min-width: 0px;
+}
+
+.win-flipView button.win-navleft
+{
+    left: 0%;
+    top: 50%;
+    margin-top: -19px;
+}
+
+.win-flipView button.win-navright
+{
+    left: 100%;
+    top: 50%;
+    margin-left: -68px;
+    margin-top: -19px;
+}
+
+.win-flipView button.win-navtop
+{
+    left: 50%;
+    top: 0%;
+    margin-left: -35px;
+}
+
+.win-flipView button.win-navbottom
+{
+    left: 50%;
+    top: 100%;
+    margin-left: -35px;
+    margin-top: -39px;
+}
+
+.win-flipView .win-progressbar
+{
+    left: 50%;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    position: absolute;
+}
+
+
+/* Base ***************************************************************/
+body
+{
+    background-color: rgb(17, 17, 17);
+    color: rgb(255, 255, 255);
+}
+
+/* Typogrpahy - Additional ***************************************************************/
+
+.win-body
+{
+    color: rgb(213, 213, 213);
+}
+
+.win-itemText, .win-itemTitle
+{
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Controls ***************************************************************/
+
+/*-----------------------------------------------------------------------------  
+    text box  
+-----------------------------------------------------------------------------*/
+input[type=text], input[type=password], input[type=email], input[type=number], input[type=tel], input[type=url], input[type=search]
+{
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.67);
+}
+
+input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=number]:hover, input[type=tel]:hover, input[type=url]:hover, input[type=search]:hover
+{
+    border-color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(255, 255, 255, 0.87);
+    color: rgb(33, 33, 33);
+}
+
+input[type=text]:active, input[type=password]:active, input[type=email]:active, input[type=number]:active, input[type=tel]:active, input[type=url]:active, input[type=search]:active,
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=number]:focus, input[type=tel]:focus, input[type=url]:focus, input[type=search]:focus
+{
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 33, 33);
+}
+
+input[type=text]:disabled, input[type=password]:disabled, input[type=email]:disabled, input[type=number]:disabled, input[type=tel]:disabled, input[type=url]:disabled, input[type=search]:disabled
+{
+    border-color: rgba(255, 255, 255, 0.49);
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.49);
+}
+
+/*-----------------------------------------------------------------------------  
+    textarea and <div contenteditable>, <div contenteditable="true">  
+-----------------------------------------------------------------------------*/
+textarea, div[contenteditable]
+{
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(33, 33, 33);
+}
+
+textarea:hover, div[contenteditable]:hover
+{
+    border-color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(255, 255, 255, 0.87);
+}
+
+textarea:active, textarea:focus, div[contenteditable]:active, div[contenteditable]:focus
+{
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 33, 33);
+}
+
+textarea:disabled, div[contenteditable]:disabled
+{
+    border-color: rgba(255, 255, 255, 0.49);
+    background-color: rgba(255, 255, 255, 0.0);
+    color: rgba(255, 255, 255, 0.49);
+}
+
+
+/*-----------------------------------------------------------------------------  
+    button  
+-----------------------------------------------------------------------------*/
+button, input[type=button], input[type=reset], input[type=submit]
+{
+    background-color: transparent;
+    border-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+button[type=submit], input[type=submit]
+{
+    background-color: rgb(38, 160, 218);
+}
+
+button:hover, input[type=button]:hover, input[type=reset]:hover, button[type=reset]:hover,
+button:active, input[type=button]:active, input[type=reset]:active, button[type=reset]:active
+{
+    background-color: rgba(255, 255, 255, 0.24);
+}
+
+button[type=submit]:hover, input[type=submit]:hover, button[type=submit]:active, input[type=submit]:active
+{
+    background-color: rgb(90, 183, 227);
+}
+
+button:hover:active, button[type=button]:hover:active, button[type=submit]:hover:active, buton[type=reset]:hover:active, input[type=button]:hover:active, 
+input[type=reset]:hover:active, input[type=submit]:hover:active
+{
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 33, 33);
+}
+
+button:disabled, input[type=button]:disabled, input[type=reset]:disabled, input[type=submit]:disabled
+{
+    border-color: rgba(255, 255, 255, 0.49);
+    color: rgba(255, 255, 255, 0.49);
+    background-color: transparent;
+}
+
+/*-----------------------------------------------------------------------------  
+    file upload  
+-----------------------------------------------------------------------------*/
+input[type=file]
+{
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(33, 33, 33, 0.49);
+}
+
+input[type=file]:hover
+{
+    border-color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(255, 255, 255, 0.87);
+    color: rgba(33, 33, 33, 0.49);
+}
+
+input[type=file]:active
+{
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgba(33, 33, 33, 0.49);
+}
+
+input[type=file]:disabled
+{
+    border-color: rgba(255, 255, 255, 0.49);
+    background-color: rgba(255, 255, 255, 0.0);
+    color: rgba(33, 33, 33, 0.49);
+}
+
+/*-----------------------------------------------------------------------------  
+    link  
+-----------------------------------------------------------------------------*/
+a
+{
+    color: rgb(38, 160, 218);
+}
+
+a:visited
+{
+    color: rgb(109, 162, 192);
+}
+
+a:hover, a:active
+{
+    color: rgb(56, 145, 182);
+}
+
+a:hover:active
+{
+    color: rgb(70, 70, 70);
+    background-color: rgb(255, 255, 255);
+}
+
+a:disabled
+{
+    color: rgb(112, 112, 112);
+}
+
+/*-----------------------------------------------------------------------------  
+    select  
+-----------------------------------------------------------------------------*/
+select
+{
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgba(0, 0, 0, 0.67);
+}
+
+select:hover
+{
+    border-color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(255, 255, 255, 0.87);
+    color: rgb(33, 33, 33);
+}
+
+select:active, select:focus
+{
+    border-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 33, 33);
+}
+
+select:disabled
+{
+    border-color: rgba(255, 255, 255, 0.49);
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.49);
+}
+
+/*-----------------------------------------------------------------------------  
+     radio button and checkbox shared styles
+ -----------------------------------------------------------------------------*/
+input[type=radio]::-ms-check,
+input[type=checkbox]::-ms-check
+{
+    color: rgb(33, 33, 33);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0);
+}
+
+input[type=radio]:hover::-ms-check, input[type=radio]:active::-ms-check,
+input[type=checkbox]:hover::-ms-check, input[type=checkbox]:active::-ms-check
+{
+    background-color: rgba(255, 255, 255, 0.87);
+    border-color: rgba(255, 255, 255, 0);
+}
+
+input[type=radio]:hover:active::-ms-check,
+input[type=checkbox]:hover:active::-ms-check
+{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+}
+
+input[type=radio]:disabled::-ms-check, input[type=radio]:disabled:hover::-ms-check, input[type=radio]:disabled:active::-ms-check, input[type=radio]:disabled:hover:active::-ms-check,
+input[type=checkbox]:disabled::-ms-check, input[type=checkbox]:disabled:hover::-ms-check, input[type=checkbox]:disabled:active::-ms-check, input[type=checkbox]:disabled:hover:active::-ms-check
+{
+    color: rgba(33, 33, 33, 0.49);
+    background-color: rgba(255, 255, 255, 0.49);
+    border-color: rgba(255, 255, 255, 0);
+}
+
+/*-----------------------------------------------------------------------------  
+    input range  
+-----------------------------------------------------------------------------*/
+input[type=range]::-ms-track
+{
+    color: rgb(17, 17, 17);
+}
+
+input[type=range]:disabled::-ms-track
+{
+    color: rgb(17, 17, 17);
+}
+
+input[type=range]::-ms-fill-upper
+{
+    background-color: rgba(255,255,255,0.35);
+}
+
+input[type=range]:active::-ms-fill-upper
+{
+    background-color: rgba(255, 255, 255, 0.43);
+}
+
+input[type=range]:hover::-ms-fill-upper
+{
+    background-color: rgba(255, 255, 255, 0.38);
+}
+
+input[type=range]::-ms-fill-lower
+{
+    background-color: rgb(54, 154, 202);
+}
+
+input[type=range]:active::-ms-fill-lower
+{
+    background-color: rgb(90, 183, 227);
+}
+
+input[type=range]:hover::-ms-fill-lower
+{
+    background-color: rgb(55, 169, 227);
+}
+
+input[type=range]:disabled::-ms-fill-upper
+{
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+input[type=range]:disabled::-ms-fill-lower
+{
+    background-color: rgba(255, 255, 255, 0.24);
+}
+
+input[type=range]::-ms-thumb
+{
+    background-color: rgb(255, 255, 255);
+}
+
+input[type=range]:disabled::-ms-thumb
+{
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+input[type=range]::-ms-ticks-before, input[type=range]::-ms-ticks-after,
+input[type=range]:disabled::-ms-ticks-before, input[type=range]:disabled::-ms-ticks-after
+{
+    color: rgb(17, 17, 17);
+}
+
+/*-----------------------------------------------------------------------------  
+    progress  
+-----------------------------------------------------------------------------*/
+progress
+{
+    background-color: rgba(255,255,255,0.35);
+    color: rgb(54,154,202);
+}
+
+/*-----------------------------------------------------------------------------  
+    Back button
+-----------------------------------------------------------------------------*/
+.win-backbutton
+{
+    background-color: transparent;
+    border-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.win-backbutton:hover, .win-backbutton:active
+{
+    background-color: rgba(255, 255, 255, 0.24);
+    border-color: rgb(255, 255, 255);
+}
+
+.win-backbutton:hover:active
+{
+    background-color:rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.win-backbutton:disabled, .win-backbutton:hover:active:disabled
+{
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.49);
+    color: rgba(255, 255, 255, 0.49);
+}
+
+/* Dark Theme CSS */
+
+/* AppBar ******************************************************************/
+
+/* AppBar Itself */
+.win-appbar
+{
+    /* Background */
+    background-color: rgb(33, 33, 33);
+    border-color: White;
+}
+
+/* Command Button */
+.win-commandicon
+{
+    background-color: transparent;
+    border-color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+
+.win-commandicon:hover, .win-commandicon:active
+{
+    background-color: rgba(255, 255, 255, 0.24);
+    border-color: rgb(255, 255, 255);
+}
+
+.win-commandicon:hover:active
+{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.win-commandicon:disabled, .win-commandicon:hover:active:disabled
+{
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.49);
+    color: rgba(255, 255, 255, 0.49);
+}
+
+/* Command Buttons (Sprite Version) */
+/* Dark Theme */
+.win-spritestates
+{
+    background-position: 0px 0px;
+}
+button:active .win-spritestates
+{
+    background-position: 0px -40px;
+}
+/* Selected Versions */
+button.win-selected .win-spritestates
+{
+    background-position: 0px -40px;
+}
+button.win-selected:active .win-spritestates
+{
+    background-position: 0px 0px;
+}
+
+/* Flyout & Settings Pane (Dark) */
+.win-flyout, 
+.win-settingspane
+{   
+    /* Default Style */
+    border-color: Black;    
+    background-color: rgb(33,33,33);
+}
+
+/* Rating Control ******************************************************************/
+.win-rating-star
+{
+    padding: 0px 6px;
+}
+
+.win-rating-average-empty
+{
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.win-rating-average-full
+{
+    color: rgb(255, 255, 255);
+}
+
+.win-rating-user-empty
+{
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.win-rating-tentative-empty
+{
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.win-rating-disabled-empty
+{
+    color: rgba(255, 255, 255, 0.3);
+    cursor: default;
+}
+
+.win-rating-disabled-full
+{
+    color: rgb(255, 255, 255);
+}
+
+/* DatePicker ******************************************************************/
+
+/* TimePicker ******************************************************************/
+
+/* Toggle **********************************************************************/
+input[type=range].win-toggle-switch::-ms-track
+{
+    border-color: rgba(255, 255, 255, 0.35); 
+}
+
+input[type=range].win-toggle-switch::-ms-fill-lower
+{
+    border-color: rgba(255, 255, 255, 0); 
+}
+
+input[type=range].win-toggle-switch::-ms-fill-upper
+{
+    background-color: rgba(255, 255, 255, 0.35); 
+}
+
+input[type=range].win-toggle-switch::-ms-thumb
+{
+    background-color: rgb(255, 255, 255);
+}
+input[type=range].win-toggle-switch:disabled::-ms-fill-lower
+{
+    background-color: rgba(255, 255, 255, 0.12); 
+}
+input[type=range].win-toggle-switch:disabled::-ms-fill-upper
+{
+    background-color: rgba(255, 255, 255, 0.35); 
+}
+input[type=range].win-toggle-switch:disabled::-ms-thumb
+{
+    background-color: rgb(106, 106, 106);
+}
+.win-toggle-title
+{
+    color: rgba(255, 255, 255, 0.8);
+}
+.win-toggle-label-on, .win-toggle-label-off
+{
+    color: rgb(255, 255, 255);
+}
+/* Tooltip ******************************************************************/
+
+
+/* listview ********************************************************/
+.win-listView .win-item.win-hover
+{
+    background-color: rgba(255, 255, 255, 0.24);
+}
+
+.win-listView .win-item.win-selected.win-hover
+{
+    background-color: rgb(90, 183, 227);
+}
+
+.win-listView .win-item:focus
+{
+    box-shadow: inset 0px 0px 0px 1px #FFFFFF; 
+}
+
+.win-listView .win-item.win-selected:focus 
+{
+    box-shadow: inset 0px 0px 0px 1px #FFFFFF; 
+}
+
+/* flip view ********************************************************/
+.win-flipView button.win-navbutton
+{
+    background-color: rgba(165, 165, 165, 0.37);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.win-flipView button.win-navbutton:hover
+{
+    background-color: rgba(255, 255, 255, 0.6);
+    color: rgb(255,255,255);
+}
+
+.win-flipView button.win-navbutton:active
+{
+    background-color: rgb(255,255,255);
+    color: rgb(33, 33, 33);
+}
+

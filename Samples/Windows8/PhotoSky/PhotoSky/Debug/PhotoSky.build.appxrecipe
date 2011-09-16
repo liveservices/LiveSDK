@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>FEDER-WIN82</Machine>
+    <WindowsUser>feder</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <Modified>2011-09-15T15:51:51.997</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Content\CommonConfiguration\Images\SignInControl\Hotmail_Black.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\SignInControl\Hotmail_Black.png</PackagePath>
+      <Modified>2011-09-02T16:52:38.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Content\CommonConfiguration\Images\SignInControl\Hotmail_White.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\SignInControl\Hotmail_White.png</PackagePath>
+      <Modified>2011-09-02T16:52:34.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Content\CommonConfiguration\Images\SignInControl\Messenger_Black.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\SignInControl\Messenger_Black.png</PackagePath>
+      <Modified>2011-09-02T16:52:38.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Content\CommonConfiguration\Images\SignInControl\Messenger_White.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\SignInControl\Messenger_White.png</PackagePath>
+      <Modified>2011-09-02T16:52:34.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Content\CommonConfiguration\Images\SignInControl\SkyDrive_Black.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\SignInControl\SkyDrive_Black.png</PackagePath>
+      <Modified>2011-09-02T16:52:38.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Content\CommonConfiguration\Images\SignInControl\SkyDrive_White.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\SignInControl\SkyDrive_White.png</PackagePath>
+      <Modified>2011-09-02T16:52:34.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Content\CommonConfiguration\Images\SignInControl\Windows_Black.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\SignInControl\Windows_Black.png</PackagePath>
+      <Modified>2011-09-02T16:52:38.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Content\CommonConfiguration\Images\SignInControl\Windows_White.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\SignInControl\Windows_White.png</PackagePath>
+      <Modified>2011-09-02T16:52:34.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Content\Debug\js\wl.js">
+      <PackagePath>LiveSDKHTML.5.0\js\wl.js</PackagePath>
+      <Modified>2011-09-12T07:59:44.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Payload\default.html">
+      <PackagePath>LiveSDKHTML.5.0\default.html</PackagePath>
+      <Modified>2011-09-02T16:52:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Payload\Images\logo.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\logo.png</PackagePath>
+      <Modified>2011-09-02T16:52:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Payload\Images\smalllogo.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\smalllogo.png</PackagePath>
+      <Modified>2011-09-02T16:52:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Payload\Images\splashscreen.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\splashscreen.png</PackagePath>
+      <Modified>2011-09-02T16:52:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Program Files (x86)\Microsoft SDKs\Live\v5.0\Metro HTML\Payload\Images\storelogo.png">
+      <PackagePath>LiveSDKHTML.5.0\Images\storelogo.png</PackagePath>
+      <Modified>2011-09-02T16:52:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\css\collectionPage.css">
+      <PackagePath>css\collectionPage.css</PackagePath>
+      <Modified>2011-09-15T10:47:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2011-09-15T10:51:56.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\css\detailPage.css">
+      <PackagePath>css\detailPage.css</PackagePath>
+      <Modified>2011-09-15T10:47:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\css\landingPage.css">
+      <PackagePath>css\landingPage.css</PackagePath>
+      <Modified>2011-09-15T10:51:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\css\userProfile.css">
+      <PackagePath>css\userProfile.css</PackagePath>
+      <Modified>2011-09-15T16:01:49.067</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2011-09-15T18:22:32.741</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2011-09-15T10:48:20.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\html\collectionPage.html">
+      <PackagePath>html\collectionPage.html</PackagePath>
+      <Modified>2011-09-15T10:47:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\html\detailPage.html">
+      <PackagePath>html\detailPage.html</PackagePath>
+      <Modified>2011-09-15T10:47:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\html\landingPage.html">
+      <PackagePath>html\landingPage.html</PackagePath>
+      <Modified>2011-09-15T18:04:13.590</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\images\logo.png">
+      <PackagePath>images\logo.png</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\images\smalllogo.png">
+      <PackagePath>images\smalllogo.png</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\images\splashscreen.png">
+      <PackagePath>images\splashscreen.png</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\images\storelogo.png">
+      <PackagePath>images\storelogo.png</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\js\collectionPage.js">
+      <PackagePath>js\collectionPage.js</PackagePath>
+      <Modified>2011-09-15T10:47:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2011-09-15T10:47:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\js\detailPage.js">
+      <PackagePath>js\detailPage.js</PackagePath>
+      <Modified>2011-09-15T10:47:32.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\js\landingPage.js">
+      <PackagePath>js\landingPage.js</PackagePath>
+      <Modified>2011-09-15T18:22:30.022</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\winjs\Css\ui-dark.css">
+      <PackagePath>winjs\Css\ui-dark.css</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\winjs\Css\ui-light.css">
+      <PackagePath>winjs\Css\ui-light.css</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\winjs\js\animations.js">
+      <PackagePath>winjs\js\animations.js</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\winjs\js\base.js">
+      <PackagePath>winjs\js\base.js</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\winjs\js\binding.js">
+      <PackagePath>winjs\js\binding.js</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\winjs\js\controls.js">
+      <PackagePath>winjs\js\controls.js</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\winjs\js\res.js">
+      <PackagePath>winjs\js\res.js</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\winjs\js\ui.js">
+      <PackagePath>winjs\js\ui.js</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\winjs\js\uicollections.js">
+      <PackagePath>winjs\js\uicollections.js</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+    <AppXPackagedFile Include="C:\Users\feder\Documents\Visual Studio 11\Projects\PhotoSky\PhotoSky\winjs\js\wwaapp.js">
+      <PackagePath>winjs\js\wwaapp.js</PackagePath>
+      <Modified>2011-08-22T09:28:52.000</Modified>
+    </AppXPackagedFile>
+  </ItemGroup>
+</Project>

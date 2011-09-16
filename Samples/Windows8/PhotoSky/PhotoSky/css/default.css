@@ -1,0 +1,75 @@
+﻿html {
+    cursor: default;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#contentHost {
+    width: 100%;
+    height: 100%;
+}
+
+.fragment {
+    width: 100%;
+    height: 100%;
+    display: -ms-grid;
+    -ms-grid-rows: 132px 1fr 0px;
+    -ms-grid-columns: 1fr;
+}
+
+.fragment header[role=banner] {
+    display: -ms-grid;
+    -ms-grid-columns: 120px 1fr;
+    -ms-grid-rows: 1fr;
+}
+
+.fragment header[role=banner] .win-backbutton {
+    margin-left: 40px;
+    margin-top: 60px;
+}
+
+.fragment header[role=banner] .titleArea {
+    -ms-grid-column: 2;
+}
+
+.fragment header[role=banner] .pageTitle {
+    margin-top: 44px;
+    height: 60pt;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: -4px;
+    display: inline-block;
+}
+
+.fragment section[role=main] {
+    -ms-grid-row: 2;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (-ms-view-state: snapped) {
+.fragment .win-contentTitle {
+    font-size: 11pt;
+    line-height: 15pt;
+}
+
+.fragment header[role=banner] {
+    display: -ms-grid;
+    -ms-grid-columns: 44px 1fr;
+    -ms-grid-rows: 1fr;
+}
+
+.fragment header[role=banner] .win-backbutton {
+    margin-left: 12px;
+    margin-top: 74px;
+}
+
+.fragment header[role=banner] .pageTitle {
+    font-size: 20pt;
+    line-height: 24pt;
+    margin-top: 72px;
+    margin-left: 7px;
+}
+}
