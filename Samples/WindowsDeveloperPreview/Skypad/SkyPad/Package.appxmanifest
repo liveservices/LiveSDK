@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="BUILD.e028d163-f681-4332-af5c-4d0e6143cb21" Publisher="CN=feder" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>SkyPad</DisplayName>
+    <PublisherDisplayName>feder</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+    <Description>SkyPad</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="skypad.exe" EntryPoint="SkyPad.App">
+      <VisualElements DisplayName="SkyPad" Logo="Images\Logo.png" SmallLogo="Images\SmallLogo.png" Description="SkyPad" ForegroundText="light" BackgroundColor="#222222" InitialRotationPreference="portrait">
+        <SplashScreen Image="Images\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
