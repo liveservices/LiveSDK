@@ -1,61 +1,52 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Windows Live Test</title>
     <style>
         <!--
-        .Name {
-            font-family: 'Segoe UI', Verdana, Tahoma, Helvetica, Arial, sans-serif;
+        .Name
+        {
+            font-family: Segoe UI, Verdana, Tahoma, Helvetica, Arial, sans-serif;
             font-weight: bold;
         }
-
         -->
-    </style>
+    </style>	
 </head>
 <body>
 <h1>Windows Live Test</h1>
-
 <div>
-    <div id="meName" class="Name"></div>
-    <div id="meImg"></div>
-    <div id="signin"></div>
+<div id="meName" class="Name"></div>
+<div id="meImg"></div>
+<div id="signin"></div>
 </div>
-<script src="//js.live.net/v5.0/wl.js" type="text/javascript"></script>
-<script type="text/javascript">
-    function setMe(clear)
-    {
+<script src="//js.live.net/v5.0/wl.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript" language="javascript">
+
+    function setMe(clear) {
 
         var imgHolder = document.getElementById("meImg"),
-                meNameHolder = document.getElementById("meName");
-        if (clear)
-        {
+            meNameHolder = document.getElementById("meName");
+        if (clear) {
             imgHolder.innerHTML = "";
             meNameHolder.innerHTML = "";
             meImgInitialized = false;
             return;
         }
 
-        if (meImgInitialized)
-        {
-            return;
-        }
+        if (meImgInitialized) return;
 
         var session = WL.getSession(),
-                token = session != null ? session.access_token : null;
+            token = session != null ? session.access_token : null;
 
-        if (token != null)
-        {
-            var url = "https://apis.live.net/v5.0/me/picture?access_token=" + encodeURIComponent(token);
+        if (token != null) {
+            var url = "https://apis.live.net/v5.0/me/picture?access_token=" + escape(token);
             imgTagString = "<img src='" + url + "' />";
             imgHolder.innerHTML = imgTagString;
 
-            WL.api({ path: "me", method: "get" }, function (response)
-            {
-                if (!response.error)
-                {
-                    document.getElementById("meName").innerHTML = response.first_name + " " + response.last_name;
+            WL.api({ path: "me", method: "get" }, function (response) {
+                if (!response.error) {
+                   document.getElementById("meName").innerHTML = response.first_name + " " + response.last_name;
                 }
             });
             meImgInitialized = true;
@@ -65,27 +56,25 @@
 
     // Update the following values
     var client_id = "%CLIENT_ID%",
-            scope = ["wl.signin", "wl.basic", "wl.offline_access"],
-            redirect_uri = "%REDIRECT_URI_PATH%/callback.php";
+        scope = ["wl.signin", "wl.basic", "wl.offline_access"],
+        redirect_uri = "%REDIRECT_URI_PATH%/callback.php";
 
     var meImgInitialized = false;
 
-    WL.Event.subscribe("auth.login", function()
-    {
+
+    WL.Event.subscribe("auth.login", function () {
         setMe(false);
     });
 
-    WL.Event.subscribe("auth.logout", function()
-    {
+    WL.Event.subscribe("auth.logout", function () {
         setMe(true);
     });
 
-    WL.init({ client_id: client_id, redirect_uri: redirect_uri, response_type: "code" });
+    WL.init({ client_id: client_id, redirect_uri: redirect_uri, response_type: "code", scope: scope  });
 
     WL.ui({ name: "signin", element: "signin", scope: scope });
 
     setMe(false);
-
 </script>
 </body>
 </html>
