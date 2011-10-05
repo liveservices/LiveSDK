@@ -78,9 +78,7 @@ function requestAccessToken($content)
     if ($response !== false)
     {
         $authToken = json_decode($response);
-        if (!empty($authToken) && !empty($authToken->
-        {ACCESSTOKEN})
-        )
+        if (!empty($authToken) && !empty($authToken->{ACCESSTOKEN}) )
         {
             return $authToken;
         }
@@ -113,13 +111,13 @@ function requestAccessTokenByRefreshToken($refreshToken)
 
 function handlePageRequest()
 {
-    if (!empty($_GET['ACCESSTOKEN']))
+    if (!empty($_GET[ACCESSTOKEN]))
     {
         // There is a token available already. It should be the token flow. Ignore it.
         return;
     }
 
-    $verifier = $_GET['CODE'];
+    $verifier = $_GET[CODE];
     if (!empty($verifier))
     {
         $token = requestAccessTokenByVerifier($verifier);
@@ -130,8 +128,8 @@ function handlePageRequest()
         else
         {
             handleTokenResponse(null, array(
-                                           'ERRORCODE' => 'request_failed',
-                                           'ERRORDESC' => 'Failed to retrieve user access token.'));
+                                           ERRORCODE => 'request_failed',
+                                           ERRORDESC => 'Failed to retrieve user access token.'));
         }
 
         return;
@@ -148,21 +146,21 @@ function handlePageRequest()
         else
         {
             handleTokenResponse(null, array(
-                                           'ERRORCODE' => 'request_failed',
-                                           'ERRORDESC' => 'Failed to retrieve user access token.'));
+                                           ERRORCODE => 'request_failed',
+                                           ERRORDESC => 'Failed to retrieve user access token.'));
         }
 
         return;
     }
 
-    $errorCode = $_GET['ERRORCODE'];
-    $errorDesc = $_GET['ERRORDESC'];
+    $errorCode = $_GET[ERRORCODE];
+    $errorDesc = $_GET[ERRORDESC];
 
     if (!empty($errorCode))
     {
         handleTokenResponse(null, array(
-                                       'ERRORCODE' => $errorCode,
-                                       'ERRORDESC' => $errorDesc));
+                                       ERRORCODE => $errorCode,
+                                       ERRORDESC => $errorDesc));
     }
 }
 
@@ -179,29 +177,28 @@ function saveRefreshToken($refreshToken)
 
 function handleTokenResponse($token, $error = null)
 {
-    $authCookie = $_COOKIE['AUTHCOOKIE'];
+    $authCookie = $_COOKIE[AUTHCOOKIE];
     $cookieValues = parseQueryString($authCookie);
 
     if (!empty($token))
     {
-        $cookieValues['ACCESSTOKEN'] = $token->ACCESSTOKEN;
-        $cookieValues['SCOPE'] = $token->SCOPE;
-        $cookieValues['EXPIRESIN'] = $token->EXPIRESIN;
+        $cookieValues[ACCESSTOKEN] = $token->{ACCESSTOKEN};
+        $cookieValues[SCOPE] = $token->{SCOPE};
+        $cookieValues[EXPIRESIN] = $token->{EXPIRESIN};
 
-        if (!empty($token->REFRESHTOKEN))
+        if (!empty($token->{ REFRESHTOKEN }))
         {
-            saveRefreshToken($token->REFRESHTOKEN);
+            saveRefreshToken($token->{ REFRESHTOKEN });
         }
     }
 
     if (!empty($error))
     {
-        $cookieValues['ERRORCODE'] = $error['ERRORCODE'];
-        $cookieValues['ERRORDESC'] = $error['ERRORDESC'];
+        $cookieValues[ERRORCODE] = $error[ERRORCODE];
+        $cookieValues[ERRORDESC] = $error[ERRORDESC];
     }
 
-    setrawcookie('AUTHCOOKIE', buildQueryString($cookieValues), 0, '/', $_SERVER['SERVER_NAME']);
-
+    setrawcookie(AUTHCOOKIE, buildQueryString($cookieValues), 0, '/', $_SERVER[SERVER_NAME]);
 }
 
 handlePageRequest();
