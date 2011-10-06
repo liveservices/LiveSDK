@@ -3,8 +3,7 @@ To learn about OAuth 2.0 web authentication protocol, the specification can be f
 
 When a user signs in to an application that integrates with Live Connect, the application can obtain an authentication token.  
 This token can then be used to identify who the user is in the applications own user profile system.  
-The JsonWebToken class takes the authentication token and the application secret as input parameter and decrypts the token to 
-produce a per app unique identifier for the signed in user.  This unique identifier is exposed via the JsonWebToken.Claims.UserId property.
+The JsonWebToken class takes the authentication token and the application secret as input parameter and decrypts the token to produce a per app unique identifier for the signed in user.  This unique identifier is exposed via the JsonWebToken.Claims.UserId property.
 
  
 
