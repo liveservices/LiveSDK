@@ -1,0 +1,74 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="PhotoSkyOnTheGo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:live="clr-namespace:Microsoft.Live.Controls;assembly=Microsoft.Live.Controls"    
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768" 
+    
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <controls:Pivot x:Name="pivotControl" Title="PHOTO SKY">
+            <!--Pivot item two-->
+            <controls:PivotItem x:Name="profilePivot" Header="profile">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.855*"/>
+                        <RowDefinition Height="0.145*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Vertical" d:LayoutOverrides="Height">
+                		<TextBlock Text="{Binding FullName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Height="100"/>
+                		<Image Source="{Binding ProfileImage}" Height="200" Width="200" Margin="50" />
+                	</StackPanel>
+
+                    <live:SignInButton ClientId="#####" Scopes="wl.basic wl.photos wl.skydrive wl.offline_access wl.signin wl.skydrive_update" RedirectUri="http://oauth.live.com/desktop" Branding="Skydrive" TextType="SignIn" Grid.Row="1" Margin="114,8,145,8" d:LayoutOverrides="VerticalAlignment" SessionChanged="SignInButton_SessionChanged"/>
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem x:Name="albumPivot" Header="album">
+                <!--Double line list with text wrapping-->
+                <ListBox x:Name="AlbumListBox" SelectionChanged="AlbumListBox_SelectionChanged" SelectedItem="{Binding SelectedAlbum,Mode=TwoWay}"  Margin="0,0,-12,0" ItemsSource="{Binding Albums}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17">
+                                <!--Replace rectangle with image-->
+                                <Image Source="{Binding AlbumPicture}" Height="100" Width="100"  Margin="12,0,9,0"/>
+                                <StackPanel Width="311">
+                                    <TextBlock Text="{Binding Title}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+                                    <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+ 
+          
+       
+        </controls:Pivot>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
