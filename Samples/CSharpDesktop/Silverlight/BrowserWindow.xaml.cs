@@ -1,4 +1,4 @@
-﻿//<SnippetLS_Desktop_CS_BrowserWindowCS>
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,4 +49,3 @@ namespace DesktopDemo
         }
     }
 }
-//</SnippetLS_Desktop_CS_BrowserWindowCS>
