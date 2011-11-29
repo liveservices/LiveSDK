@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    
+    <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Contacts"
+    />
+    
+    <ListView android:id="@+id/contactListView1" 
+    android:layout_height="175dp" 
+    android:layout_width="match_parent"
+    android:scrollbars="vertical"
+    />
+    
+    <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text=" "
+    />
+    
+    <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Chat"
+    />
+    
+    <ListView android:id="@+id/chatView2" 
+    android:layout_height="145dp" 
+    android:layout_width="match_parent"
+    android:scrollbars="vertical"
+    />
+    <TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text=" "
+    />    
+    
+    <EditText android:id="@+id/sendText"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:singleLine="true"
+              android:textSize="12sp"
+              android:autoText="false"
+              android:capitalize="none"
+              android:scrollHorizontally="true"/>
+    <Button android:layout_height="wrap_content" android:id="@+id/send" android:text="Send" android:layout_width="fill_parent"></Button>
+</LinearLayout>

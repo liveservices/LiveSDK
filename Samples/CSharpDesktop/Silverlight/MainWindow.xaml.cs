@@ -1,4 +1,4 @@
-﻿//<SnippetLS_Desktop_CS_MainWindow_All>
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,29 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-//<SnippetLS_Desktop_CS_MainWindow_Refs>
+
 using System.Web.Script.Serialization;
 using System.Net;
 using System.IO;
-//</SnippetLS_Desktop_CS_MainWindow_Refs>
+
 namespace DesktopDemo
 {
     public partial class MainWindow : Window
     {
-        //<SnippetLS_Desktop_CS_MainWindow_mVars>
+
         private static string requestUrl = @"https://apis.live.net/v5.0/";
         public Dictionary<string, string> userData = new Dictionary<string, string>();
-        //</SnippetLS_Desktop_CS_MainWindow_mVars>
+
 
         public MainWindow()
         {
             InitializeComponent();
-            //<SnippetLS_Desktop_CS_MainWindow_initCall>
+
             setUserUI();
-            //</SnippetLS_Desktop_CS_MainWindow_initCall>
+
         }
 
-        //<SnippetLS_Desktop_CS_MainWindow_requestFunctions>
+
         private void setUserUI()
         {
             if (App.Current.Properties.Contains("responseData"))
@@ -62,9 +62,7 @@ namespace DesktopDemo
             var d = jss.Deserialize<Dictionary<string, string>>(json);
             return d;
         }
-        //</SnippetLS_Desktop_CS_MainWindow_requestFunctions>
 
-        //<SnippetLS_Desktop_CS_MainWindow_changeView>
         private void changeView()
         {
             btnSignIn.Visibility = Visibility.Collapsed;
@@ -78,9 +76,7 @@ namespace DesktopDemo
                 txtTokens.Text += App.Current.Properties["authentication_token"];
             }
         }
-        //</SnippetLS_Desktop_CS_MainWindow_changeView>
 
-        //<SnippetLS_Desktop_CS_MainWindow_buttonHandlers>
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
             BrowserWindow browser = new BrowserWindow();
@@ -97,9 +93,7 @@ namespace DesktopDemo
             imgUser.Source = null;
             txtBlock_Name.Text = "";
         }
-        //</SnippetLS_Desktop_CS_MainWindow_buttonHandlers>
 
-        //<SnippetLS_Desktop_CS_MainWindow_windowFunctions>
         void browser_Closed(object sender, EventArgs e)
         {
             setUserUI();
@@ -109,7 +103,6 @@ namespace DesktopDemo
         {
             Application.Current.Shutdown();
         }
-        //</SnippetLS_Desktop_CS_MainWindow_windowFunctions>
+
     }
 }
-//</SnippetLS_Desktop_CS_MainWindow_All>
