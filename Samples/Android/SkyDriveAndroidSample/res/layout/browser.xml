@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="top"
+    android:background="#FF218CF7"
+    >
+    
+	<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/textview"
+	    android:layout_width="fill_parent"
+	    android:layout_height="60dp"
+		android:layout_marginTop="15px"    
+	    android:text="@string/loginHeader"
+	    android:layout_marginLeft="15px"
+		android:textColor="#FFFFFF"	    
+    /> 
+    
+	<WebView xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/webView" 
+	   	android:layout_width="fill_parent" 
+	   	android:layout_height="350dp"
+	   	android:layout_marginLeft="15px"
+	   	android:layout_marginRight="15px"
+	   	android:layout_marginBottom="15px"
+	/>
+	
+    <Button xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/oauthCancelBtn" 
+		android:text="@string/cancel"
+		android:layout_width="125dp" 
+		android:layout_height="wrap_content"
+		android:layout_gravity="right"
+		android:layout_marginRight="15px"
+	/>	  	
+</LinearLayout>

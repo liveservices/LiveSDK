@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.live.dev.samples"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="10"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@android:style/Theme.Light">
+        <activity android:name=".SkyDriveAndroidSample"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OauthActivity"
+                  android:label="@string/app_name">
+        </activity>
+        <activity android:name=".AlbumList"
+                  android:label="@string/app_name">
+        </activity>
+         <activity android:name=".PhotoList"
+                  android:label="@string/app_name">
+        </activity>
+        
+    </application>
+</manifest>

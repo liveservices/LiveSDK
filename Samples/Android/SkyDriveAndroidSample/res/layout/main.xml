@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_vertical"
+    >
+	<Button 
+	android:id="@+id/launchBtn" 
+	android:background="#FF218CF7"
+	android:textColor="#FFFFFF"
+	android:textStyle="bold"
+	android:drawableLeft="@drawable/icon"
+	android:text="@string/signIn"
+	android:paddingLeft="40dip"
+	android:paddingRight="40dip"
+	android:paddingTop="10dip"
+	android:paddingBottom="10dip"
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+	/>
+</LinearLayout>

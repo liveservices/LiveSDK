@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello, please, Sign In</string>
+    <string name="app_name">SkyDrive</string>
+    <string name="albumsTitle">Your albums</string>
+    <string name="photosTitle">Photos</string>
+    <string name="signOut">Sign Out</string>
+    <string name="loadingAlbums">Loading your album list....</string>
+    <string name="signIn">Sign In</string>
+    <string name="loadingPhotos">Loading photos...</string>
+    <string name="cancel">Cancel</string>    
+    <string name="loginHeader">In order to enable Microsoft SkyDrive on your phone, you will need to login to Windows Live.</string>
+</resources>
