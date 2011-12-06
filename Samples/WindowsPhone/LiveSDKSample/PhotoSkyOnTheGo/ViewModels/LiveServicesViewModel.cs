@@ -265,7 +265,7 @@ namespace PhotoSkyOnTheGo
                      
             LiveConnectClient downloadClient = new LiveConnectClient(App.Session);
             downloadClient.DownloadCompleted += new EventHandler<LiveDownloadCompletedEventArgs>(downloadClient_DownloadCompleted);
-            downloadClient.DownloadAsync(SelectedPhoto.ID);
+            downloadClient.DownloadAsync(SelectedPhoto.ID+"/content");
         }
 
         void downloadClient_DownloadCompleted(object sender, LiveDownloadCompletedEventArgs e)
