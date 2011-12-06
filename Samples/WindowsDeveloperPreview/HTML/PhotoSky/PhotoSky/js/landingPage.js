@@ -139,7 +139,7 @@
 
     function getUserPicture() {
         var session = WL.getSession();
-        var LIveConnectAPIUrl = "https://beta.apis.live.net/v5.0";
+        var LIveConnectAPIUrl = "https://apis.live.net/v5.0";
         document.getElementById("meImg").src = LIveConnectAPIUrl + "/me/picture?return_ssl_resources=true&access_token=" + session.access_token;
         document.getElementById("meImg").style.visibility = "visible";
 

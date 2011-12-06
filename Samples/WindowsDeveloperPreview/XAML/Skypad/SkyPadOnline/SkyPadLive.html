@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
  <head>
-   <script src="https://beta-js.live.net/v5.0/wl.js" type="text/javascript"></script>
+   <script src="//js.live.net/v5.0/wl.js" type="text/javascript"></script>
 
     <script src="js/jquery-1.6.2.min.js" type="text/javascript"></script>
 
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/default.css" />
     <script type="text/javascript">
 
-      LIveConnectAPIUrl = "https://beta.apis.live.net/v5.0";
+      LiveConnectAPIUrl = "https://apis.live.net/v5.0";
 
       WL.Event.subscribe("auth.login", onLoginComplete);
       WL.Event.subscribe("wl.log", onAPIError);
@@ -74,7 +74,7 @@
 
      function getUserPicture() {
          var session = WL.getSession();
-         document.getElementById("meImg").src = LIveConnectAPIUrl + "/me/picture?return_ssl_resources=true&access_token=" + session.access_token;
+         document.getElementById("meImg").src = LiveConnectAPIUrl + "/me/picture?return_ssl_resources=true&access_token=" + session.access_token;
          document.getElementById("meImg").style.visibility = "visible";
      }
 

@@ -37,7 +37,7 @@ namespace SkyPad
 
         private void OnSessionChanged(Object sender, LiveConnectSessionChangedEventArgs args)
         {
-            if (args != null && args.Session != null && args.Session.Status == LiveConnectSessionStatus.Connected)
+            if (args != null && args.Session != null &&  args.Status == LiveConnectSessionStatus.Connected)
             {
                 this.client = new LiveConnectClient(args.Session);
 
@@ -77,28 +77,21 @@ namespace SkyPad
         private void getUserPicture()
         {
             var memoryStream = new InMemoryRandomAccessStream();
-            client.DownloadCompleted += new EventHandler<LiveOperationCompletedEventArgs>(getUserPicture_Callback);
-            client.DownloadAsync("/me/picture?return_ssl_resources=true", memoryStream.OpenWrite(), memoryStream);
+            client.GetCompleted += new EventHandler<LiveOperationCompletedEventArgs>(getUserPicture_Callback);
+            client.GetAsync("/me/picture");
         }
 
-        private void getUserPicture_Callback(object sender, LiveOperationCompletedEventArgs e)
+        void getUserPicture_Callback(object sender, LiveOperationCompletedEventArgs e)
         {
-           client.DownloadCompleted -= getUserPicture_Callback;
+            client.GetCompleted -= getUserPicture_Callback;
 
-           if (e.Error == null)
+            if (e.Error == null)
             {
-                IRandomAccessStream imageStream = e.UserState as IRandomAccessStream;
+                dynamic result = e.Result; 
+                BitmapImage imgSource = new BitmapImage();
+                imgSource.UriSource = new Uri(result.location, UriKind.Absolute);
+                this.userImage.Source = imgSource;
 
-                if (imageStream != null)
-                {
-                    BitmapImage imgSource = new BitmapImage();
-                    imgSource.SetSource(imageStream);
-                    this.userImage.Source = imgSource;
-                }
-                else
-                {
-                    statusTxt.Text = "Could not find user's picture";
-                }
             }
             else
             {
@@ -107,6 +100,8 @@ namespace SkyPad
 
             getUserName();
         }
+
+
 
         private void getUserName()
         {
@@ -235,7 +230,7 @@ namespace SkyPad
 
         private void deleteNote()
         {
-            if (client.Session == null || client.Session.Status != LiveConnectSessionStatus.Connected)
+            if (client.Session == null)
             {
                 statusTxt.Text = "You need to Sign In";
             }
@@ -274,7 +269,7 @@ namespace SkyPad
         }
         private void saveNote()
         {
-            if (client.Session == null || client.Session.Status != LiveConnectSessionStatus.Connected)
+            if (client.Session == null )
             {
                 statusTxt.Text = "You need to Sign In";
             }
@@ -399,7 +394,7 @@ namespace SkyPad
 
         private void downloadNote(String noteId)
         {
-            if (client == null || client.Session == null || client.Session.Status != LiveConnectSessionStatus.Connected)
+            if (client == null || client.Session == null )
             {
                 statusTxt.Text = "You need to Sign In";
             }
@@ -410,20 +405,19 @@ namespace SkyPad
                     statusTxt.Text = "Need to save file.";
                 }
                 var stream = new MemoryStream();
-
-                client.DownloadCompleted += new EventHandler<LiveOperationCompletedEventArgs>(downloadNote_Callback);
-                client.DownloadAsync(noteId + "/content?return_ssl_resources=true", stream, stream);
+                client.DownloadCompleted += new EventHandler<LiveDownloadCompletedEventArgs>(downloadNote_Callback);
+                client.DownloadAsync(noteId + "/content?return_ssl_resources=true");
             }
         }
 
-        private void downloadNote_Callback(object sender, LiveOperationCompletedEventArgs e)
+        private void downloadNote_Callback(object sender, LiveDownloadCompletedEventArgs e)
         {
             client.DownloadCompleted -= downloadNote_Callback;
 
             if (e.Error == null)
             {
                 // Get the stream with the downloaded file
-                var memoryStream = e.UserState as MemoryStream;
+                var memoryStream = e.Result as MemoryStream;
 
                 // Cursor is at the end of the stream so we need to rewind
                 memoryStream.Seek(0, SeekOrigin.Begin);
@@ -458,6 +452,7 @@ namespace SkyPad
                 statusTxt.Text = e.Error.Message;
             }
         }
+
 
         private void backBtn_Click(object sender, RoutedEventArgs e)
         {

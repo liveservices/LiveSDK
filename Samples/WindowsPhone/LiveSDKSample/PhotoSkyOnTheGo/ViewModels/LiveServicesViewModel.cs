@@ -261,20 +261,18 @@ namespace PhotoSkyOnTheGo
         {
             if (SelectedPhoto == null)
                 return;
-            MemoryStream fileContent = new MemoryStream();
-           
-            
+         
+                     
             LiveConnectClient downloadClient = new LiveConnectClient(App.Session);
-            downloadClient.DownloadCompleted += new EventHandler<LiveOperationCompletedEventArgs>(downloadClient_DownloadCompleted);
-
-            downloadClient.DownloadAsync(SelectedPhoto.ID,fileContent,fileContent);
+            downloadClient.DownloadCompleted += new EventHandler<LiveDownloadCompletedEventArgs>(downloadClient_DownloadCompleted);
+            downloadClient.DownloadAsync(SelectedPhoto.ID);
         }
 
-        void downloadClient_DownloadCompleted(object sender, LiveOperationCompletedEventArgs e)
+        void downloadClient_DownloadCompleted(object sender, LiveDownloadCompletedEventArgs e)
         {
             if (e.Error == null)
             {
-                MemoryStream outputStream = (MemoryStream)e.UserState;
+                MemoryStream outputStream = (MemoryStream)e.Result;
 
 
                 // Create a filename for JPEG file in isolated storage.  
@@ -290,8 +288,10 @@ namespace PhotoSkyOnTheGo
                 myFileStream.Write(outputStream.GetBuffer(), 0, (int)outputStream.Length);
                 myFileStream.Close();
             }
-
+   
         }
+
+        
 
         internal void Upload()
         {
