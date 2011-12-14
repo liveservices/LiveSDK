@@ -27,7 +27,7 @@ namespace PhotoSkyOnTheGo
            
         private void SignInButton_SessionChanged(object sender, LiveConnectSessionChangedEventArgs e)
         {
-            if (e.Session != null && e.Session.Status == LiveConnectSessionStatus.Connected)
+            if (e.Session != null && e.Status == LiveConnectSessionStatus.Connected)
             {
                 App.Session = e.Session;
                 this.pivotControl.SelectedItem = this.albumPivot;
