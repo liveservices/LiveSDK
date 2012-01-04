@@ -91,11 +91,6 @@ If you are hosting Asp.Net, you need IIS with .Net framework 4.0 enabled.
 
 =====
 
-5. Known issues
-The parameter scope is added to WL.init recently, but it has not been deployed yet.
-
-====
-
-6. Support forums
+5. Support forums
 
 To ask questions or to submit comments about this code sample, visit the Live Connect forums at: http://dev.live.com/forums.
