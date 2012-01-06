@@ -1,4 +1,4 @@
-﻿namespace JWTSample
+namespace JWTSample
 {
     // Reference: http://tools.ietf.org/search/draft-jones-json-web-token-00
     //
@@ -81,6 +81,13 @@
 
             [DataMember(Name = "urn:microsoft:appuri")]
             public string ClientIdentifier
+            {
+                get;
+                private set;
+            }
+
+            [DataMember(Name = "urn:microsoft:appid")]
+            public string AppId
             {
                 get;
                 private set;
@@ -256,8 +263,8 @@
 
         private void ValidateSignature(string key)
         {
-            // Derive signing key, Signing key = SHA256(secret + "JWTSIG")
-            byte[] bytes = UTF8Encoder.GetBytes(key);
+            // Derive signing key, Signing key = SHA256(secret + "JWTSig")
+            byte[] bytes = UTF8Encoder.GetBytes(key + "JWTSig");
             byte[] signingKey = SHA256Provider.ComputeHash(bytes);
 
             // To Validate:
@@ -281,7 +288,7 @@
             byte[] input = UTF8Encoder.GetBytes(this.envelopeTokenSegment + "." + this.claimsTokenSegment);
 
             // calculate an HMAC SHA-256 MAC
-            using (HMACSHA256 hashProvider = new HMACSHA256(bytes))
+            using (HMACSHA256 hashProvider = new HMACSHA256(signingKey))
             {
                 byte[] myHashValue = hashProvider.ComputeHash(input);
 
