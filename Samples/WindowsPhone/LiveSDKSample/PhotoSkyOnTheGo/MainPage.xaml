@@ -33,7 +33,17 @@
                 		<Image Source="{Binding ProfileImage}" Height="200" Width="200" Margin="50" />
                 	</StackPanel>
 
-                    <live:SignInButton ClientId="#####" Scopes="wl.basic wl.photos wl.skydrive wl.offline_access wl.signin wl.skydrive_update" RedirectUri="http://oauth.live.com/desktop" Branding="Skydrive" TextType="SignIn" Grid.Row="1" Margin="114,8,145,8" d:LayoutOverrides="VerticalAlignment" SessionChanged="SignInButton_SessionChanged"/>
+                    <live:SignInButton
+                        ClientId="PLACE_YOUR_CLIENT_ID_HERE"
+                        Scopes="wl.basic wl.photos wl.skydrive wl.offline_access wl.signin wl.skydrive_update"
+                        RedirectUri="http://oauth.live.com/desktop"
+                        Branding="Skydrive"
+                        TextType="SignIn"
+                        Grid.Row="1"
+                        Margin="114,8,145,8"
+                        d:LayoutOverrides="VerticalAlignment"
+                        SessionChanged="SignInButton_SessionChanged"
+                    />
                 </Grid>
             </controls:PivotItem>
             <controls:PivotItem x:Name="albumPivot" Header="album">
