@@ -13,10 +13,10 @@ public void Main()
 {
     Dictionary<int, string> d = new Dictionary<int, string>();
     d.Add(0, "716a2df99a61d879a0d6fc25c8c3733f");
-    string token = "eyJhbGciOi...[removed for brevity]";
+    string auth_token = "eyJhbGciOi...[removed for brevity]";
     try
     {
-        Build.Samples.Authentication.JsonWebToken myJWT = new Build.Samples.Authentication.JsonWebToken(token, d);
+        Build.Samples.Authentication.JsonWebToken myJWT = new Build.Samples.Authentication.JsonWebToken(auth_token, d);
         string myToken = myJWT.Envelope.ToString();
     }
     catch (Exception e)
