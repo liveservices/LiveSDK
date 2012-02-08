@@ -3,7 +3,7 @@ Live Connect Samples
 
 These samples will show you how to integrate Windows Live services into your applications across Windows Phone, Windows, PHP, ASP.NET and other platforms.
 
-Except as otherwise noted, the samples are licensed under the Microsoft Limited Public License (http://connect.microsoft.com/terms.aspx#P).
+For license visit https://github.com/liveservices/LiveSDK/blob/master/Samples/LICENSE.txt
 
 Getting Started
 ===============
