@@ -1,0 +1,47 @@
+﻿body {
+}
+
+#content {
+    display: -ms-grid;
+    -ms-grid-rows: 40px 20px 100px auto 10px auto;
+	-ms-grid-columns: 600px 20px auto
+}
+
+#content-signin-title
+{
+	-ms-grid-column: 1;
+	-ms-grid-row: 1;	
+}
+
+#content-signin-description
+{
+	-ms-grid-column: 1;
+	-ms-grid-row: 2;		
+}
+
+#content-signin-control
+{
+	-ms-grid-column: 1;
+	-ms-grid-row: 3;
+	height: 94px;
+	text-align: center;	
+}
+
+#content-signin-customization
+{
+	-ms-grid-column: 1;
+	-ms-grid-row: 4;	
+}
+
+#content-signin-apply
+{
+	-ms-grid-column: 1;
+	-ms-grid-row: 5;
+	text-align: center;	
+}
+
+#content-signin-code
+{
+	-ms-grid-column: 3;
+	-ms-grid-row: 2;	
+}

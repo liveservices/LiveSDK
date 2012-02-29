@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Live Services Lab</title>
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.0.6/css/ui-dark.css" rel="stylesheet">
+    <script src="//Microsoft.WinJS.0.6/js/base.js"></script>
+    <script src="//Microsoft.WinJS.0.6/js/ui.js"></script>
+
+    <link href="/css/share.css" rel="stylesheet">
+    <script src="///LiveSDKHTML/js/wl.js" type="text/javascript"> </script>
+    <script src="/js/apiservices.js"></script>
+</head>
+<body data-design-activate="defaultPage.activated">
+    <div id="rootGrid">
+        <div id="header">
+		
+		</div>
+		
+        <div id="content">
+            <h2 id="content-header">API Services Lab</h2>
+			
+			<table style="height: 570.23px; width:100%">
+				<tr>
+					<td style="width: 50%;">
+						<span>Customize a REST API Service request. &nbsp;&nbsp;&nbsp;</span>
+                        <span>Request type: </span>			
+						<select id="apiMethod" name="select">
+							<option>GET</option>
+							<option>POST</option>
+							<option>PUT</option>
+							<option>DELETE</option>
+							<option>MOVE</option>
+							<option>COPY</option>
+							<option>DOWNLOAD</option>
+							<option>UPLOAD</option>
+						</select><br />
+						<table style="width: 98%;">
+							<tr>
+								<td style="width: 90px;">
+									<span>Path: </span>
+								</td>
+								<td>
+									<input id="apiPath" style="width: 100%;" value="me" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span>Destination: </span>
+								</td>
+								<td>
+									<input id="destinationPath" style="width:100%;" />
+								</td>
+							</tr>
+						</table>
+						
+						<span>Request JSON body : </span>
+						<textarea id="apiBody" style="position:relative; top:1px; left:1px; right:1px; width: 98%; height:136px;"></textarea>
+						<br />
+						<span>Code : </span><span id="request-status"></span><br />
+						<textarea id="code" class="Code" style="position:relative; top:1px; left:1px; right:1px; width: 98%; height:237px;" readonly="readonly"></textarea>
+						<div style="text-align: center;"><button id="sendRequest">Send</button></div>
+					</td>
+					<td style="width: 10px;"></td>
+					<td id="outputpanel" style="width: 50%;">                        
+					</td>
+				</tr>
+			</table>
+        </div>
+
+        <div id="footer" role="contentinfo">
+        </div>
+    </div>
+</body>
+</html>

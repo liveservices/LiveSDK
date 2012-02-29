@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link href="/css/header.css" rel="stylesheet">
+        <script src="/js/share.js"></script>
+    </head>
+    <body>
+		<div id="header-root">
+			<div id="header-title" style="vertical-align: middle;">
+				<img src="images/live-sdk.png"/>
+				<span>Live SDK Samples</span>
+			</div>
+			<div id="header-nav-menus">
+				<a id="button-nav-home" href="default.html" >Home</a>
+				<span> | </span>
+                <a id="button-nav-auth" href="auth.html" >Authentication</a>
+				<span> | </span>
+				<a id="button-nav-signincontrol" href="signincontrol.html">Sign-In Control</a>
+				<span> | </span>
+				<a id="button-nav-api" href="apiservices.html">API Service</a>
+				<span> | </span>
+				<a id="button-nav-doc" href="http://dev.live.com">Documentation</a>
+			</div>
+
+			<div id="header-sign-in">
+				<div id="header-signin-control"></div>
+			</div>
+			<div id="header-profile">  
+				<div id="meName" class="Name"></div>
+				<div id="meImg"></div>
+			</div>
+			<div id="header-auth-status">
+				<span>Status : </span><span id="current-session-status"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				<span>Scopes : </span><span id="current-session-scope"></span><br />
+			</div>
+		</div>
+    </body>
+</html>

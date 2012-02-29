@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StoreAssociation>
+  <Publisher>CN=DD4FFF3F-B972-41CC-8BD9-AE81454A4245</Publisher>
+  <NamespacePrefix>59576Skullbox</NamespacePrefix>
+  <PublisherDisplayName>Skullbox</PublisherDisplayName>
+  <GeneratePackageHash>http://www.w3.org/2001/04/xmlenc#sha256</GeneratePackageHash>
+  <SupportedLocales>en-us;de-de;fr-fr;ja-jp;zh-cn</SupportedLocales>
+  <ProductReservedInfo>
+    <MainPackageIdentityName>59576Skullbox.PhotoSky</MainPackageIdentityName>
+    <ReservedNames>
+      <ReservedName>PhotoSky</ReservedName>
+    </ReservedNames>
+  </ProductReservedInfo>
+  <AccountPackageIdentityNames />
+  <PackageInfoList />
+</StoreAssociation>

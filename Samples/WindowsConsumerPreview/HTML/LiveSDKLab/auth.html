@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Services Lab</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.0.6/css/ui-dark.css" rel="stylesheet">
+    <script src="//Microsoft.WinJS.0.6/js/base.js"></script>
+    <script src="//Microsoft.WinJS.0.6/js/ui.js"></script>
+    
+    <!-- Live SDK references -->    
+    <script src="///LiveSDKHTML/js/wl.js" type="text/javascript"> </script>
+    <link href="/css/share.css" rel="stylesheet">
+    <link href="/css/auth.css" rel="stylesheet">
+    <script src="/js/auth.js"></script>
+</head>
+<body role="application">
+    <div id="rootGrid">
+        <div id="header">
+		</div>
+		
+        <div id="content">
+            <h2 id="content-auth-title" >Live Authentication</h2>
+			<div id="content-auth-content">
+				<span>Select the scopes, and click the "Authorize" button.</span><br />
+				<table style="border-style: dotted none; width: 100%">
+					<tr>
+						<td style="text-align: center;">
+							<div id="auth-action">
+								<select size="7" id="select-scopes" multiple="multiple" aria-labelledby="listLabel">
+									<option selected="selected" value="wl.signin">wl.signin</option>
+									<option value="wl.basic">wl.basic</option>
+									<option value="wl.calendars">wl.calendars</option>
+									<option value="wl.calendars_update">wl.calendars_update</option>
+									<option value="wl.skydrive">wl.skydrive</option>
+									<option value="wl.skydrive_update">wl.skydrive_update</option>
+								</select>
+							</div>
+						</td>
+						<td style="width: 400px;">
+							<span>Code : </span><br />
+							<textarea id="auth-code" class="Code" readonly="readonly" style="height: 239px; width: 100%;"></textarea>
+						</td>
+					</tr>
+				</table>
+				<br />
+				<div style="text-align: center; width: 100%;">
+				<button id="button-authorize">Authorize</button>	
+				</div>
+			</div>
+			
+			<div id="outputpanel">
+			</div>
+        </div>
+        <div id="footer" role="contentinfo">
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>groupedItemsPage</title>
+    
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.0.6/css/ui-dark.css" rel="stylesheet">
+    <script src="//Microsoft.WinJS.0.6/js/base.js"></script>
+    <script src="//Microsoft.WinJS.0.6/js/ui.js"></script>
+    
+
+    <link href="/css/default.css" rel="stylesheet">
+    <link href="/css/groupedItemsPage.css" rel="stylesheet">
+    <script src="/js/data.js"></script>
+    <script src="/js/groupedItemsPage.js"></script>
+</head>
+<body>
+    <!-- These templates are used to display each item in the ListView declared below. -->
+    <div class="headerTemplate" data-win-control="WinJS.Binding.Template">
+        <h2 class="group-title" data-win-bind="onclick: click; textContent: title" role="link"></h2>
+    </div>
+
+    <div class="itemtemplate" data-win-control="WinJS.Binding.Template">
+        <img class="item-image" src="#" data-win-bind="src: backgroundImage; alt: title" />
+        <div class="item-overlay">
+            <h4 class="item-title" data-win-bind="textContent: title"></h4>
+            <h6 class="item-subtitle win-type-ellipsis" data-win-bind="textContent: subtitle"></h6>
+        </div>
+    </div>
+
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment groupeditemspage">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">PhotoSky</span>
+            </h1>
+        </header>
+        
+        <div id="signinbutton" style="width: 251px; margin-left: auto; margin-top: 40%; height: 64px; top: 0px;"></div>
+    	<div id="userProfileDiv" style="height: 64px; width: 700px; left: 722px; margin-left: auto; margin-right: 20%;" >
+            <table border="0">
+                <tr class="header" >
+                    <td style="width: 552px;margin-top: 50%; height: 64px; top: 0px; ">
+                        <span id="meName" class="meName" >Please Sign In</span>
+                    </td>
+                    <td style="margin-right: 10pt; width: 30px;">
+                        <img id="meImg" class="meImg" alt="" src=""  style="visibility:collapse;"/>
+                    </td>
+                </tr>
+            </table>
+    	</div>
+        <section aria-label="Main content" role="main">
+            <div class="groupeditemslist" aria-label="List of groups" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="BUILD.88a704d9-d7b9-42ef-b95e-6ca9776c1811" Version="1.0.0.0" Publisher="CN=liwa" />
+  <Properties>
+    <DisplayName>LiveSDKJavaScriptSamples</DisplayName>
+    <Description>MetroHtmlSamples</Description>
+    <PublisherDisplayName>liwa</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="LiveSDKJavaScriptSamples" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="LiveSDKJavaScriptSamples" ForegroundText="light" BackgroundColor="#000000">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="images\splashscreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

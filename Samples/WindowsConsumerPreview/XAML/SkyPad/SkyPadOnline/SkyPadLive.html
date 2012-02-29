@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+   <script src="//js.live.net/v5.0/wl.js" type="text/javascript"></script>
+
+    <script src="js/jquery-1.6.2.min.js" type="text/javascript"></script>
+
+    <!-- Shoppinglist references -->
+    <link rel="stylesheet" href="/css/default.css" />
+    <script type="text/javascript">
+
+      LiveConnectAPIUrl = "https://apis.live.net/v5.0";
+
+      WL.Event.subscribe("auth.login", onLoginComplete);
+      WL.Event.subscribe("wl.log", onAPIError);
+
+      $(document).ready(function () {  
+           WL.init({
+                client_id: "ClientID Here",
+                redirect_uri:"http://skypadbuild.com/callback.html",
+                response_type: "token"
+            });
+
+           WL.ui({
+                name: "signin",
+                element: "signInButton",
+                scope: ["wl.basic","wl.signin", "wl.skydrive_update"]
+              
+            });
+      });
+
+      function onLoginComplete() {
+         var session = WL.getSession();
+         if (session.error) {
+             signedOutUser();
+         }
+         else {
+            signedInUser();
+         }
+      }
+
+      function onAPIError(error) {
+         if (error) {
+              alert("API Error: " + error);
+         }
+      }
+
+      function signedOutUser() {
+         document.getElementById("meName").innerText = "";
+         document.getElementById("meImg").src = "";
+         document.getElementById("meImg").style.visibility = "collapse";
+      }
+
+      function signedInUser() {
+         var session = WL.getSession();
+         if (!session.error) {
+             getUserName();
+         }
+      }
+
+      function getUserName() {
+          WL.api({ path: "/me", method: "GET" }, getUserName_Callback);
+      } 
+
+      function getUserName_Callback(result) {
+         if (result.error) {
+            alert("Couldn't retrieve user's name: " + result.error);
+         }
+         else if (result.name) {
+            document.getElementById("meName").innerText = "Welcome, " + result.name;
+            getUserPicture();
+         }
+     }
+
+     function getUserPicture() {
+         var session = WL.getSession();
+         document.getElementById("meImg").src = LiveConnectAPIUrl + "/me/picture?return_ssl_resources=true&access_token=" + session.access_token;
+         document.getElementById("meImg").style.visibility = "visible";
+     }
+
+</script>
+</head>
+<body>
+    <table width="100%" border="0">
+        <tr class="header" valign="middle" style="height:100px;">
+            <td style="width: 60px;">
+                <div class="btnBack"/>
+            </td>
+            <td style="width: 400px;">
+                <h1  class="pageTitle">SkyPad</h1>
+            </td>
+            <td style="width: 400px;"></td>
+            <td style="width: 600px;">
+                <span id="meName" class="meName" />
+            </td>
+            <td style="width: 100px;">
+                <img id="meImg" class="meImg" alt="" src="" style="visibility:collapse;"/>
+            </td>
+            <td style="width: 400px;">
+                <div id="signInButton" />
+            </td>
+        </tr>
+        <tr valign="top">
+            <td>
+            	<div class="btnCollection">
+                    <div id="btnClear" class="btnClear"></div>
+                    <div id="btnAdd" class="btnAdd"></div>
+                    <div id="debug"></div>
+	             </div>
+            </td>
+            <td class="contentShell" colspan="5">
+            </td>
+        </tr>
+     </table>
+</body>
+</html>
