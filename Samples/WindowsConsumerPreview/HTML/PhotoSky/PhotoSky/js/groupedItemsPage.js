@@ -1,4 +1,4 @@
-﻿/// <reference path="///LiveSDKHTML//js/wl.js" />
+/// <reference path="///LiveSDKHTML//js/wl.js" />
 (function () {
     "use strict";
 
@@ -44,17 +44,15 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             var listView = element.querySelector(".groupeditemslist").winControl;
-            WL.Event.subscribe("auth.login", onLoginComplete);
-
+            
+            
             WL.init();
-
-            WL.ui({
-                name: "signin",
-                element: "signinbutton",
-                scope: ["wl.signin", "wl.skydrive"],
+            WL.getLoginStatus().then(function (response) {
+                onSessionChange(response);
             });
+            
 
-
+      
             ui.setOptions(listView, {
                 groupHeaderTemplate: element.querySelector(".headerTemplate"),
                 itemTemplate: element.querySelector(".itemtemplate"),
@@ -91,12 +89,29 @@
        
     });
 
-    function onLoginComplete() {
+    function onSessionChange(response) {
         var session = WL.getSession();
-        if (!session.error) {
+        if (!session) {
+            WL.Event.subscribe("auth.login", onLoginComplete);
+            WL.ui({
+                name: "signin",
+                element: "signinbutton",
+                scope: ["wl.signin", "wl.skydrive"],
+            });
+        }
+        else {
             signedInUser();
         }
-    };
+    }
+
+    function onLoginComplete() {
+        var session = WL.getSession();
+        
+        if (!session.error) {
+    
+            signedInUser();
+        }
+    }
     function signedInUser() {
         WL.api({
             path: "/me",
