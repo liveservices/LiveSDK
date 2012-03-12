@@ -81,8 +81,8 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Grid.Column="1" Style="{StaticResource PageHeaderTextStyle}" Margin="0,0,560,40"/>
-            <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="47" Margin="900,10,0,0" VerticalAlignment="Top" Width="162">
-                <Controls:SignInButton x:Name="btnSignIn" Content="SignInButton" HorizontalAlignment="Right" Height="46" Margin="-1,0,6,0" Width="157" Scopes="wl.signin wl.skydrive" SessionChanged="btnSignIn_SessionChanged"/>
+           <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="47" Margin="900,10,0,0" VerticalAlignment="Top" Width="162">
+                <Controls:SignInButton x:Name="btnSignIn" Visibility="Collapsed"  Content="SignInButton" HorizontalAlignment="Right" Height="46" Margin="-1,0,6,0" Width="157" Scopes="wl.signin wl.skydrive" SessionChanged="btnSignIn_SessionChanged"/>
             </StackPanel>
             <Grid Grid.Column="1" HorizontalAlignment="Left" Height="123" Margin="552,7,0,0" VerticalAlignment="Top" Width="345">
                 <Grid.ColumnDefinitions>

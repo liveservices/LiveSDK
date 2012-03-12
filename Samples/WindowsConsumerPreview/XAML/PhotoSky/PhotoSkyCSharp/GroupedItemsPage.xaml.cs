@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -72,6 +72,10 @@ namespace PhotoSkyCSharp
             {
                 App.Session = e.Session;
                 LoadProfile();
+            }
+            else
+            {
+                btnSignIn.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
         }
 
