@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="BUILD.addb3d33-e486-4d82-aec4-02e5270e0e63" Publisher="CN=bertvon" Version="1.0.0.0" />
+  <Properties>
+    <DisplayName>SkyPadCpp</DisplayName>
+    <PublisherDisplayName>bertvon</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+    <Description>SkyPadCpp</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="SkyPadCpp.App">
+      <VisualElements DisplayName="SkyPadCpp" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="SkyPadCpp" ForegroundText="light" BackgroundColor="#222222">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
