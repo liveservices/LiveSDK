@@ -101,6 +101,7 @@
 
             HttpWebRequest request = WebRequest.Create(oauthUrl) as HttpWebRequest;
             request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
 
             try
             {
