@@ -36,7 +36,6 @@
                     <live:SignInButton
                         ClientId="PLACE_YOUR_CLIENT_ID_HERE"
                         Scopes="wl.basic wl.photos wl.skydrive wl.offline_access wl.signin wl.skydrive_update"
-                        RedirectUri="http://oauth.live.com/desktop"
                         Branding="Skydrive"
                         TextType="SignIn"
                         Grid.Row="1"
