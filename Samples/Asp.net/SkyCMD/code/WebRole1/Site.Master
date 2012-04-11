@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebRole1.SiteMaster" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>SkyCMD</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <script src="http://js.live.net/v5.0/wl.js" type="text/javascript" language="javascript"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js" type="text/javascript" language="javascript"></script>
+    <script src="Scripts/file.js" type="text/javascript" language="javascript"></script>
+    <script src="Scripts/datamodel.js" type="text/javascript" language="javascript"></script>
+    <script src="Scripts/keys.js" type="text/javascript" language="javascript"></script>
+    <script src="Scripts/commands.js" type="text/javascript" language="javascript"></script>
+    <script src="Scripts/terminal.js" type="text/javascript" language="javascript"></script>
+    <script src="Scripts/controller.js" type="text/javascript" language="javascript"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+</body>
+</html>

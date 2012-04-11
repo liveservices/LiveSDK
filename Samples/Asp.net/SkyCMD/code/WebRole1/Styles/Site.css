@@ -1,0 +1,60 @@
+﻿body {
+    background: black;
+    color: #bbb;
+    padding: 5px;
+    font-family: consolas, monaco, Courier New, Courier New, monospace;
+    font-size: 12px;
+}
+
+.output {
+    padding-left: 20px;
+    display: inline-block;
+}
+
+.green {
+    color: #0f0;
+}
+
+#music {
+    position: absolute;
+    top: -30px;
+}
+
+#overlay img {
+    position: fixed;
+    width: 600px;
+    bottom: 200px;
+    left: 50%;
+    margin: 0 0 0 -300px;
+}
+
+#backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .9;
+}
+
+table {
+    font-size: 12px;
+    border: 0;
+    cell-padding: 0;
+    cell-spacing: 0;
+    margin: 0;
+    padding: 0;
+}
+
+td {
+    cell-padding: 0;
+    cell-spacing: 0;
+    margin: 0;
+    padding: 0;
+    padding-left: 15px;
+}
+
+td.size {
+    text-align: right;
+}
