@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.Specialized;
+    
     using System.IO;
     using System.Linq;
     using System.Net;
@@ -11,18 +12,19 @@
     using System.Web;
     using System.Web.UI;
     using System.Web.UI.WebControls;
-
+        
     public partial class Callback : System.Web.UI.Page
     {
         private const string wlCookie = "wl_auth";
 
         // Update the following values
         private const string clientId = "%CLIENT_ID%";
+
         // Make sure this is identical to the redirect_uri parameter passed in WL.init() call.
         private const string callback = "%REDIRECT_URI_PATH%/callback.aspx";  
         private const string clientSecret = "%CLIENT_SECRET%";
 
-        private const string oauthUrl = "https://oauth.live.com/token";
+        private const string oauthUrl = "https://login.live.com/oauth20_token.srf";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -102,7 +104,7 @@
             HttpWebRequest request = WebRequest.Create(oauthUrl) as HttpWebRequest;
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded;charset=UTF-8";
-
+                
             try
             {
                 using (StreamWriter writer = new StreamWriter(request.GetRequestStream()))
@@ -158,10 +160,15 @@
 
             if (token != null)
             {
+                JsonWebToken userInfo = ReadUserInfoFromAuthToken(token);
+                // The userInfo contains identifiable information about the user.
+                // You may add some logic here.
+                
                 newCookie[OAuthConstants.AccessToken] = HttpUtility.UrlEncode(token.AccessToken);
+                newCookie[OAuthConstants.AuthenticationToken] = HttpUtility.UrlEncode(token.AuthenticationToken);
                 newCookie[OAuthConstants.Scope] = HttpUtility.UrlPathEncode(token.Scope);
                 newCookie[OAuthConstants.ExpiresIn] = HttpUtility.UrlEncode(token.ExpiresIn);
-
+                
                 if (!string.IsNullOrEmpty(token.RefreshToken))
                 {
                     SaveRefreshToken(token.RefreshToken);
@@ -176,57 +183,23 @@
 
             context.Response.Cookies.Add(newCookie);
         }
-    }
-	
-    [DataContract]
-    public class OAuthToken
-    {
-        [DataMember(Name = OAuthConstants.AccessToken)]
-        public string AccessToken { get; set; }
 
-        [DataMember(Name = OAuthConstants.RefreshToken)]
-        public string RefreshToken { get; set; }
-
-        [DataMember(Name = OAuthConstants.ExpiresIn)]
-        public string ExpiresIn{get; set;}
-
-        [DataMember(Name = OAuthConstants.Scope)]
-        public string Scope { get; set; }
-    }
-
-    public static class OAuthConstants
-    {
-        #region OAuth 2.0 standard parameters
-        public const string ClientID = "client_id";
-        public const string ClientSecret = "client_secret";
-        public const string Callback = "redirect_uri";
-        public const string ClientState = "state";
-        public const string Scope = "scope";
-        public const string Code = "code";
-        public const string AccessToken = "access_token";
-        public const string ExpiresIn = "expires_in";
-        public const string RefreshToken = "refresh_token";
-        public const string ResponseType = "response_type";
-        public const string GrantType = "grant_type";
-        public const string Error = "error";
-        public const string ErrorDescription = "error_description";
-        public const string Display = "display";
-        #endregion
-    }	
-	
-    [DataContract]
-    public class OAuthError
-    {
-        public OAuthError(string code, string desc)
+        private static JsonWebToken ReadUserInfoFromAuthToken(OAuthToken token)
         {
-            this.Code = code;
-            this.Description = desc;
+            string authenticationToken = token.AuthenticationToken;
+            Dictionary<int, string> keys = new Dictionary<int, string>();
+            keys.Add(0, clientSecret);
+
+            JsonWebToken jwt = null;
+            try
+            {
+                jwt = new JsonWebToken(authenticationToken, keys);
+                return jwt;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
-
-        [DataMember(Name = OAuthConstants.Error)]
-        public string Code { get; private set; }
-
-        [DataMember(Name = OAuthConstants.ErrorDescription)]
-        public string Description { get; private set; }
-    }	
+    }
 }

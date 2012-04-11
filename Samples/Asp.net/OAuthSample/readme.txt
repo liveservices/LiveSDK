@@ -62,8 +62,9 @@ f) The client code (wl.js) on the default.html page gets the access token, chang
 
 3. Requirements
 
-For Asp.Net sample, you need a Windows that has IIS/Asp.Net installed. 
+For Asp.Net sample, you need a Windows that has IIS/Asp.Net installed.
 For Php sample, you can use Windows or Linux that has Php installed.
+Make sure your sample site is on port 80(http) or 443 (https).
 
 =====
 

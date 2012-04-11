@@ -3,6 +3,7 @@ define('AUTHCOOKIE', 'wl_auth');
 define('ERRORCODE', 'error');
 define('ERRORDESC', 'error_description');
 define('ACCESSTOKEN', 'access_token');
+define('AUTHENTICATION_TOKEN', 'authentication_token');
 define('CODE', 'code');
 define('SCOPE', 'scope');
 define('EXPIRESIN', 'expires_in');
@@ -11,10 +12,11 @@ define('REFRESHTOKEN', 'refresh_token');
 // Update the following values
 define('CLIENTID', '%CLIENT_ID%');
 define('CLIENTSECRET', '%CLIENT_SECRET%');
+
 // Make sure this is identical to the redirect_uri parameter passed in WL.init() call.
 define('CALLBACK', '%REDIRECT_URI_PATH%/callback.php');
 
-define('OAUTHURL', 'https://oauth.live.com/token');
+define('OAUTHURL', 'https://login.live.com/oauth20_token.srf');  
 
 function buildQueryString($array)
 {
@@ -54,7 +56,7 @@ function sendRequest(
     $url,
     $method = 'GET',
     $data = array(),
-    $headers = array('Content-type: application/x-www-form-urlencoded'))
+    $headers = array('Content-type: application/x-www-form-urlencoded;charset=UFT-8'))
 {
     $context = stream_context_create(array
                                      (
@@ -78,7 +80,7 @@ function requestAccessToken($content)
     if ($response !== false)
     {
         $authToken = json_decode($response);
-        if (!empty($authToken) && !empty($authToken->{ACCESSTOKEN}) )
+        if (!empty($authToken) && !empty($authToken->{ACCESSTOKEN}))
         {
             return $authToken;
         }
@@ -183,6 +185,7 @@ function handleTokenResponse($token, $error = null)
     if (!empty($token))
     {
         $cookieValues[ACCESSTOKEN] = $token->{ACCESSTOKEN};
+        $cookieValues[AUTHENTICATION_TOKEN] = $token->{AUTHENTICATION_TOKEN};
         $cookieValues[SCOPE] = $token->{SCOPE};
         $cookieValues[EXPIRESIN] = $token->{EXPIRESIN};
 

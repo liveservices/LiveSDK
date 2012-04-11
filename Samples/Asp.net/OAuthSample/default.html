@@ -7,7 +7,7 @@
         <!--
         .Name
         {
-            font-family: Segoe UI, Verdana, Tahoma, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Verdana, Tahoma, Helvetica, Arial, sans-serif;
             font-weight: bold;
         }
         -->
@@ -16,65 +16,64 @@
 <body>
 <h1>Windows Live Test</h1>
 <div>
-<div id="meName" class="Name"></div>
-<div id="meImg"></div>
-<div id="signin"></div>
+  <div id="meName" class="Name"></div>
+  <div id="meImg"></div>
+  <div id="signin"></div>
 </div>
 <script src="//js.live.net/v5.0/wl.js" type="text/javascript" language="javascript"></script>
 <script type="text/javascript" language="javascript">
-
-    function setMe(clear) {
-
-        var imgHolder = document.getElementById("meImg"),
-            meNameHolder = document.getElementById("meName");
-        if (clear) {
-            imgHolder.innerHTML = "";
-            meNameHolder.innerHTML = "";
-            meImgInitialized = false;
-            return;
-        }
-
-        if (meImgInitialized) return;
-
-        var session = WL.getSession(),
-            token = session != null ? session.access_token : null;
-
-        if (token != null) {
-            var url = "https://apis.live.net/v5.0/me/picture?access_token=" + escape(token);
-            imgTagString = "<img src='" + url + "' />";
-            imgHolder.innerHTML = imgTagString;
-
-            WL.api({ path: "me", method: "get" }, function (response) {
-                if (!response.error) {
-                   document.getElementById("meName").innerHTML = response.first_name + " " + response.last_name;
-                }
-            });
-            meImgInitialized = true;
-        }
-
-    }
 
     // Update the following values
     var client_id = "%CLIENT_ID%",
         scope = ["wl.signin", "wl.basic", "wl.offline_access"],
         redirect_uri = "%REDIRECT_URI_PATH%/callback.aspx";
 
-    var meImgInitialized = false;
+    function id(domId) {
+        return document.getElementById(domId);
+    }
 
+    function displayMe() {
+        var imgHolder = id("meImg"),
+            nameHolder = id("meName");
 
-    WL.Event.subscribe("auth.login", function () {
-        setMe(false);
-    });
+        if (imgHolder.innerHTML != "") return;
 
-    WL.Event.subscribe("auth.logout", function () {
-        setMe(true);
-    });
+        if (WL.getSession() != null) {
+            WL.api({ path: "me/picture", method: "get" }).then(
+                    function (response) {
+                        if (response.location) {
+                            imgHolder.innerHTML = "<img src='" + response.location + "' />";
+                        }
+                    }
+                );
+
+            WL.api({ path: "me", method: "get" }).then(
+                    function (response) {
+                        nameHolder.innerHTML = response.name;
+                    }
+                );
+        }
+    }
+
+    function clearMe() {
+        id("meImg").innerHTML = "";
+        id("meName").innerHTML = "";
+    }
+
+    WL.Event.subscribe("auth.sessionChange",
+        function (e) {
+            if (e.session) {
+                displayMe();
+            }
+            else {
+                clearMe();
+            }
+        }
+    );
 
     WL.init({ client_id: client_id, redirect_uri: redirect_uri, response_type: "code" });
 
-    WL.ui({ name: "signin", element: "signin", scope: scope });
-
-    setMe(false);
+    WL.ui({ name: "signin", element: "signin" });
 </script>
 </body>
 </html>
