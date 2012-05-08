@@ -1,0 +1,26 @@
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bin\Release\resources.pri
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bin\Release\AppxManifest.xml
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bin\Release\SkyNotifyRoamSample.build.appxrecipe
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\priconfig.xml
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\layout.resfiles
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\resources.resfiles
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\pri.resfiles
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\LanguageQualifiers.txt
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\ProjectArchitectures.txt
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\priconfig.xml.intermediate
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\layout.resfiles.intermediate
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\resources.resfiles.intermediate
+C:\Users\Jesus\Documents\Visual Studio 11\Projects\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\pri.resfiles.intermediate
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bin\Release\resources.pri
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bin\Release\AppxManifest.xml
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bin\Release\SkyNotifyRoamSample.build.appxrecipe
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\priconfig.xml.intermediate
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\layout.resfiles.intermediate
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\resources.resfiles.intermediate
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\pri.resfiles.intermediate
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\priconfig.xml
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\layout.resfiles
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\resources.resfiles
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\pri.resfiles
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\LanguageQualifiers.txt
+C:\Users\Jesus\Documents\SkyNotifyRoamSample\SkyNotifyRoamSample\bld\Release\ProjectArchitectures.txt

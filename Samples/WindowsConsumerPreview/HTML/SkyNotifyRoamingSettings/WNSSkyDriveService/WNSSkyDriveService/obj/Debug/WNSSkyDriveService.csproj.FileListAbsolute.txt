@@ -1,0 +1,15 @@
+c:\users\dragon_soul08\documents\visual studio 2010\Projects\WNSSkyDriveService\WNSSkyDriveService\obj\Debug\WNSSkyDriveService.csprojResolveAssemblyReference.cache
+c:\users\dragon_soul08\documents\visual studio 2010\Projects\WNSSkyDriveService\WNSSkyDriveService\bin\WNSSkyDriveService.dll
+c:\users\dragon_soul08\documents\visual studio 2010\Projects\WNSSkyDriveService\WNSSkyDriveService\bin\WNSSkyDriveService.pdb
+c:\users\dragon_soul08\documents\visual studio 2010\Projects\WNSSkyDriveService\WNSSkyDriveService\obj\Debug\WNSSkyDriveService.dll
+c:\users\dragon_soul08\documents\visual studio 2010\Projects\WNSSkyDriveService\WNSSkyDriveService\obj\Debug\WNSSkyDriveService.pdb
+D:\LiveExample\WNSSkyDriveService\WNSSkyDriveService\bin\WNSSkyDriveService.dll
+D:\LiveExample\WNSSkyDriveService\WNSSkyDriveService\bin\WNSSkyDriveService.pdb
+D:\LiveExample\WNSSkyDriveService\WNSSkyDriveService\obj\Debug\WNSSkyDriveService.csprojResolveAssemblyReference.cache
+D:\LiveExample\WNSSkyDriveService\WNSSkyDriveService\obj\Debug\WNSSkyDriveService.dll
+D:\LiveExample\WNSSkyDriveService\WNSSkyDriveService\obj\Debug\WNSSkyDriveService.pdb
+C:\JABRDocuments\Documents\_WinP&PC\Windows Live\WindowsNotificationSample_Final\WNSSkyDriveService\WNSSkyDriveService\bin\WNSSkyDriveService.dll
+C:\JABRDocuments\Documents\_WinP&PC\Windows Live\WindowsNotificationSample_Final\WNSSkyDriveService\WNSSkyDriveService\bin\WNSSkyDriveService.pdb
+C:\JABRDocuments\Documents\_WinP&PC\Windows Live\WindowsNotificationSample_Final\WNSSkyDriveService\WNSSkyDriveService\obj\Debug\WNSSkyDriveService.csprojResolveAssemblyReference.cache
+C:\JABRDocuments\Documents\_WinP&PC\Windows Live\WindowsNotificationSample_Final\WNSSkyDriveService\WNSSkyDriveService\obj\Debug\WNSSkyDriveService.dll
+C:\JABRDocuments\Documents\_WinP&PC\Windows Live\WindowsNotificationSample_Final\WNSSkyDriveService\WNSSkyDriveService\obj\Debug\WNSSkyDriveService.pdb
