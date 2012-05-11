@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="SkyDriveUploader.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="362" d:DesignWidth="428">
+
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Center" VerticalAlignment="Center" Height="361" Width="424">
+        <Button Content="Add" Height="29" HorizontalAlignment="Left" Margin="82,24,0,0" Name="btnAdd" VerticalAlignment="Top" Width="62" Click="btnAdd_Click" />
+        <Button Content="Upload" Height="29" HorizontalAlignment="Right" Margin="0,24,142,0" Name="btnUpload" VerticalAlignment="Top" Width="62" Click="btnUpload_Click" IsEnabled="False" />
+        <ListBox Height="275" HorizontalAlignment="Left" Margin="12,67,0,0" Name="listUploadItems" VerticalAlignment="Top" Width="400" ScrollViewer.HorizontalScrollBarVisibility="Hidden"/>
+        <Button Content="Clear" Height="29" HorizontalAlignment="Left" Margin="151,24,0,0" Name="btnClear" VerticalAlignment="Top" Width="62" Click="btnClear_Click" />
+    </Grid>
+</UserControl>
