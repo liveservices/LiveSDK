@@ -1,0 +1,22 @@
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bin\Debug\resources.pri
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bin\Debug\AppxManifest.xml
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bin\Debug\PhotoSkyJavaScript.build.appxrecipe
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\priconfig.xml.intermediate
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\layout.resfiles.intermediate
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\resources.resfiles.intermediate
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\pri.resfiles.intermediate
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\priconfig.xml
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\layout.resfiles
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\resources.resfiles
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\pri.resfiles
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\LanguageQualifiers.txt
+E:\Windows Live\Windows RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\ProjectArchitectures.txt
+D:\WindowsLive\RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bin\Debug\resources.pri
+D:\WindowsLive\RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bin\Debug\AppxManifest.xml
+D:\WindowsLive\RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bin\Debug\PhotoSkyJavaScript.build.appxrecipe
+D:\WindowsLive\RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\priconfig.xml
+D:\WindowsLive\RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\layout.resfiles
+D:\WindowsLive\RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\resources.resfiles
+D:\WindowsLive\RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\pri.resfiles
+D:\WindowsLive\RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\LanguageQualifiers.txt
+D:\WindowsLive\RP\PhotoSkyJavaScript\PhotoSkyJavaScript\bld\Debug\ProjectArchitectures.txt
