@@ -1,0 +1,36 @@
+﻿#header-root {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 150px 100px 10px;
+    -ms-grid-rows: 30px 25px auto;
+}
+
+#header-title
+{
+    -ms-grid-column: 1;
+	-ms-grid-row: 1;
+}
+
+#header-nav-menus
+{
+	-ms-grid-column: 1;
+	-ms-grid-row: 2;
+}
+
+#header-profile
+{
+	-ms-grid-column: 3;
+	-ms-grid-row: 1;
+}
+
+#header-sign-in
+{
+	-ms-grid-column: 2;
+	-ms-grid-row: 2;
+}
+
+#header-auth-status
+{
+	-ms-grid-column: 1;
+	-ms-grid-row: 3;	
+    color: #ff6a00;
+}

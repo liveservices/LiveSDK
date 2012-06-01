@@ -1,0 +1,27 @@
+﻿body {
+}
+
+#content {
+    display: -ms-grid;
+	-ms-grid-columns: 46% 20px 46%;
+    -ms-grid-rows: 50px 370px 52px 250px;
+}
+
+#content-auth-title
+{
+	-ms-grid-column: 1;
+	-ms-grid-row: 1;	
+}
+
+#content-auth-content
+{
+	-ms-grid-column: 1;
+	-ms-grid-row: 2;
+}
+
+
+#outputpanel
+{
+	-ms-grid-column: 3;
+	-ms-grid-row: 2;	
+}

@@ -1,0 +1,40 @@
+﻿#cover-root
+{
+    -ms-grid-columns: 1fr 600px 1fr;
+    -ms-grid-rows: 100px 100px auto 20px auto;
+    display: -ms-grid;
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape)
+{
+}
+
+@media screen and (-ms-view-state: filled)
+{
+}
+
+@media screen and (-ms-view-state: snapped)
+{
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait)
+{
+}
+
+#cover-logo
+{
+    -ms-grid-column: 2;
+    -ms-grid-row: 3;
+}
+
+#cover-title
+{
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;	
+}
+
+#cover-content
+{
+    -ms-grid-column: 2;
+    -ms-grid-row: 5;	
+}
