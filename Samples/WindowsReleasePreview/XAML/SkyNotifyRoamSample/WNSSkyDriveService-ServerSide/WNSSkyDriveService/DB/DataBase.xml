@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database>
+  <Record>
+    <HostName>MyPC</HostName>
+    <UserLiveId>juan@hotmail.com</UserLiveId>
+    <channelUri>https://db3.notify.windows.com/?token=AQQAAACM5W1hgovG855CyGxDo7gw7sjHmrtFNWoVjsHVcaAl5FhA%2bRDiwhbvSXTn%2b2gBI%2f5u2nHACP7%2bwm7iVnpPaDj35Qi3kWfBAK2R8il63aFSDCZGjqZwSVWjvKtBI3mL4KM%3d</channelUri>
+    <ChannelExpirationTime>Fri Apr 13 14:09:35 PDT 2012</ChannelExpirationTime>
+  </Record>
+  <Record>
+    <HostName>slatechu</HostName>
+    <UserLiveId>dragon_soul08@hotmail.com</UserLiveId>
+    <channelUri>https://db3.notify.windows.com/?token=AgUAAAC4WwGKLD4dNoRW9iyBI0uDPUnmudEZmbG3swi3i2qc8TijRMHUXWQCHuAilzfqI0AI%2fE8VCDta4hj1oISqAw4KlDZDt0%2f46nl55oMNwmPyqvdP%2fH9x%2fEdMEQgkCzKVI58%3d</channelUri>
+    <ChannelExpirationTime>Fri Jul 6 14:50:07 PDT 2012</ChannelExpirationTime>
+  </Record>
+</Database>

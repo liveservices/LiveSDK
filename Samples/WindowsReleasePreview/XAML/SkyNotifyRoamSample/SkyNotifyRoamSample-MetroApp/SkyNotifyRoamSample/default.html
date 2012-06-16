@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SkyNotifyRoamSample</title>
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0.RC/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0.RC/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0.RC/js/ui.js"></script>
+    <!--Live SDK reference-->
+    <script src="///LiveSDKHTML/js/wl.js" type="text/javascript"> </script>
+    <!-- SkyNotifyRoamSample references -->
+    <link href="/css/default.css" rel="stylesheet">
+    <script src="/js/navigator.js"></script>
+    <script src="/js/default.js"></script>
+</head>
+<body>
+    <div id="errorBar" data-win-control="WinJS.UI.AppBar" data-win-options="{layout:'custom',placement:'top',sticky:false,disabled:true}">
+        <div class="errorArea">
+            <div class="errorTitle">
+                <span id="ErrorTitle" style="color: #f00">Oups, an error has ocured!</span>
+                <br />
+                <span id="ErrorText" style="color: #fff">Place for error</span>
+            </div>
+            <div class="errorBtns">
+                <button id="BtnAccept" class="win-button" value="Accept">Accept</button>
+                <button id="BtnDismiss" class="win-button" value="Dismiss">Dismiss</button>
+            </div>
+        </div>
+    </div>
+    <div style="position: fixed; text-align: right; width: 100%;">
+        <div class="meSignInBtn" id="signinbutton"></div>
+    </div>
+    <div id="contenthost" data-win-control="SkyNotifyRoamSample.PageControlNavigator"
+        data-win-options="{home: '/html/groupedItemsPage.html'}"></div>
+  <!--  <div id="appbar" data-win-control="WinJS.UI.AppBar">
+        <button id="home" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmd', label:'Home', icon:'&#xE10F;', onclick: SkyNotifyRoamSample.navigateHome}">
+        </button>
+    </div>-->
+</body>
+</html>
