@@ -23,8 +23,21 @@ namespace PhotoSkyOnTheGo
             InitializeComponent();
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
+            Loaded += MainPage_Loaded;
         }
-           
+
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            Loaded -= MainPage_Loaded;
+            if (signInButton.ClientId == "PLACE YOUR CLIENT ID HERE")
+            {
+                signInButton.Visibility = Visibility.Collapsed;
+                infoTextBlock.Text = "In order to use the sample, you must first place your client id " +
+                                     "in MainPage.xaml. " +
+                                     "For more information see http://go.microsoft.com/fwlink/?LinkId=220871";
+            }
+        }
+
         private void SignInButton_SessionChanged(object sender, LiveConnectSessionChangedEventArgs e)
         {
             if (e.Session != null && e.Status == LiveConnectSessionStatus.Connected)

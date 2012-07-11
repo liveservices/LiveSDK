@@ -31,18 +31,19 @@
                     <StackPanel Grid.Row="0" Orientation="Vertical" d:LayoutOverrides="Height">
                 		<TextBlock Text="{Binding FullName}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" Height="100"/>
                 		<Image Source="{Binding ProfileImage}" Height="200" Width="200" Margin="50" />
-                	</StackPanel>
+                        <TextBlock Height="120" Name="infoTextBlock" Text="" TextWrapping="Wrap" />
+                    </StackPanel>
 
                     <live:SignInButton
-                        ClientId="PLACE_YOUR_CLIENT_ID_HERE"
+                        Name="signInButton"
+                        ClientId="PLACE YOUR CLIENT ID HERE"
                         Scopes="wl.basic wl.photos wl.skydrive wl.offline_access wl.signin wl.skydrive_update"
                         Branding="Skydrive"
                         TextType="SignIn"
                         Grid.Row="1"
                         Margin="114,8,145,8"
                         d:LayoutOverrides="VerticalAlignment"
-                        SessionChanged="SignInButton_SessionChanged"
-                    />
+                        SessionChanged="SignInButton_SessionChanged" />
                 </Grid>
             </controls:PivotItem>
             <controls:PivotItem x:Name="albumPivot" Header="album">
