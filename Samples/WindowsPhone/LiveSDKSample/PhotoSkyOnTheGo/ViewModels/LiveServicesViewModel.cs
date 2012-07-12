@@ -25,18 +25,12 @@ namespace PhotoSkyOnTheGo
     public class LiveServicesViewModel : INotifyPropertyChanged
     {
         #region Constructor
+
         public LiveServicesViewModel()
         {
             this.Albums = new ObservableCollection<SkydriveAlbum>();
         }
 
-        #endregion
-
-        #region Private Members
-        /// <summary>
-        /// A collection for ItemViewModel objects.
-        /// </summary>
-      
         #endregion
 
         #region Properties
@@ -74,6 +68,7 @@ namespace PhotoSkyOnTheGo
                 NotifyPropertyChanged("FullName");
             }
         }
+
         public bool IsDataLoaded
         {
             get;
@@ -115,9 +110,11 @@ namespace PhotoSkyOnTheGo
                 NotifyPropertyChanged("SelectedPhoto");
             }
         }
+
         #endregion
 
         #region Methods
+
         /// <summary>
         /// Creates and adds a few ItemViewModel objects into the Items collection.
         /// </summary>
@@ -130,7 +127,6 @@ namespace PhotoSkyOnTheGo
 
         private void GetProfileData()
         {
-            
             LiveConnectClient clientGetMe = new LiveConnectClient(App.Session);
             clientGetMe.GetCompleted += new EventHandler<LiveOperationCompletedEventArgs>(clientGetMe_GetCompleted);
             clientGetMe.GetAsync("me");
@@ -144,7 +140,6 @@ namespace PhotoSkyOnTheGo
         {
             if (e.Error == null)
             {
-                
                 ProfileImage = (string)e.Result["location"];
             }
         }
@@ -166,22 +161,24 @@ namespace PhotoSkyOnTheGo
 
         void clientFolder_GetCompleted(object sender, LiveOperationCompletedEventArgs e)
         {
-            if (e.Error == null)
+            if (e.Error != null)
             {
-                List<object> data = (List<object>)e.Result["data"];
+                return;
+            }
 
-                foreach (IDictionary<string,object> album in data)
-                {
-                    SkydriveAlbum albumItem = new SkydriveAlbum();
-                    albumItem.Title = (string)album["name"];
-                    
-                    albumItem.Description = (string)album["description"];
-                    albumItem.ID = (string)album["id"];
+            List<object> data = (List<object>)e.Result["data"];
 
-                    Albums.Add(albumItem);
-                    GetAlbumPicture(albumItem);
-                    DownloadPictures(albumItem);
-                }
+            foreach (IDictionary<string,object> album in data)
+            {
+                SkydriveAlbum albumItem = new SkydriveAlbum();
+                albumItem.Title = (string)album["name"];
+
+                albumItem.Description = (string)album["description"];
+                albumItem.ID = (string)album["id"];
+
+                Albums.Add(albumItem);
+                GetAlbumPicture(albumItem);
+                DownloadPictures(albumItem);
             }
         }
 
@@ -210,41 +207,41 @@ namespace PhotoSkyOnTheGo
 
         void folderListClient_GetCompleted(object sender, LiveOperationCompletedEventArgs e)
         {
-            if (e.Error == null)
+            if (e.Error != null)
             {
-                int i = 0;
-                SkydriveAlbum album = (SkydriveAlbum)e.UserState;
-
-                album.Photos.Clear();
-                List<object> data = (List<object>)e.Result["data"];
-
-                foreach (IDictionary<string, object> photo in data)
-                {
-                    var item = new SkydrivePhoto();
-                    item.Title = (string)photo["name"];
-                    item.Subtitle = (string)photo["name"];
-
-                    item.PhotoUrl = (string)photo["source"];
-                    item.Description = (string)photo["description"];
-                    item.ID = (string)photo["id"];
-
-                    if (album != null)
-                    {
-                        album.Photos.Add(item);
-                    }
-                    // Stop after downloaing 10 imates
-                    if (i++ > 10)
-                        break;
-                }
+                return;
             }
 
+            int i = 0;
+            SkydriveAlbum album = (SkydriveAlbum)e.UserState;
 
+            album.Photos.Clear();
+            List<object> data = (List<object>)e.Result["data"];
 
+            foreach (IDictionary<string, object> photo in data)
+            {
+                var item = new SkydrivePhoto();
+                item.Title = (string)photo["name"];
+                item.Subtitle = (string)photo["name"];
 
+                item.PhotoUrl = (string)photo["source"];
+                item.Description = (string)photo["description"];
+                item.ID = (string)photo["id"];
+
+                if (album != null)
+                {
+                    album.Photos.Add(item);
+                }
+                // Stop after downloaing 10 imates
+                if (i++ > 10)
+                    break;
+            }
         }
+
         #endregion
 
         #region INPC
+
         public event PropertyChangedEventHandler PropertyChanged;
     
         private void NotifyPropertyChanged(String propertyName)
@@ -255,43 +252,29 @@ namespace PhotoSkyOnTheGo
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
         #endregion
 
         internal void Download()
         {
             if (SelectedPhoto == null)
+            {
                 return;
-         
+            }
                      
             LiveConnectClient downloadClient = new LiveConnectClient(App.Session);
-            downloadClient.DownloadCompleted += new EventHandler<LiveDownloadCompletedEventArgs>(downloadClient_DownloadCompleted);
-            downloadClient.DownloadAsync(SelectedPhoto.ID+"/content");
+            downloadClient.BackgroundDownloadCompleted +=
+                new EventHandler<LiveOperationCompletedEventArgs>(downloadClient_BackgroundDownloadCompleted);
+
+            string path = SelectedPhoto.ID + "/content";
+            Uri downloadLocation = new Uri("/shared/transfers/" + SelectedPhoto.Title, UriKind.RelativeOrAbsolute);
+            string userState = SelectedPhoto.ID;  // arbitrary string to uniquely identify the request.
+            downloadClient.BackgroundDownload(path, downloadLocation, userState);
         }
 
-        void downloadClient_DownloadCompleted(object sender, LiveDownloadCompletedEventArgs e)
+        private void downloadClient_BackgroundDownloadCompleted(object sender, LiveOperationCompletedEventArgs e)
         {
-            if (e.Error == null)
-            {
-                MemoryStream outputStream = (MemoryStream)e.Result;
-
-
-                // Create a filename for JPEG file in isolated storage.  
-                String tempJPEG = SelectedPhoto.Title;
-
-                // Create virtual store and file stream. Check for duplicate tempJPEG files.  
-                var myStore = IsolatedStorageFile.GetUserStoreForApplication();
-                if (myStore.FileExists(tempJPEG))
-                {
-                    myStore.DeleteFile(tempJPEG);
-                }
-                IsolatedStorageFileStream myFileStream = myStore.CreateFile(tempJPEG);
-                myFileStream.Write(outputStream.GetBuffer(), 0, (int)outputStream.Length);
-                myFileStream.Close();
-            }
-   
         }
-
-        
 
         internal void Upload()
         {
@@ -304,20 +287,46 @@ namespace PhotoSkyOnTheGo
         void task_Completed(object sender, PhotoResult e)
         {
             if (e.ChosenPhoto == null)
+            {
                 return;
+            }
 
-            LiveConnectClient uploadClient = new LiveConnectClient(App.Session);
-            uploadClient.UploadCompleted += new EventHandler<LiveOperationCompletedEventArgs>(uploadClient_UploadCompleted);
-            uploadClient.UploadAsync(SelectedAlbum.ID, "Image"+DateTime.Now.Millisecond+".jpg", e.ChosenPhoto);
+            string uploadLocation = "/shared/transfers/Image" + DateTime.Now.Millisecond + ".jpg";
+            BackgroundWorker worker = new BackgroundWorker();
+            worker.DoWork += (o, args) =>
+            {
+                using (IsolatedStorageFile store = IsolatedStorageFile.GetUserStoreForApplication())
+                {
+                    using (IsolatedStorageFileStream stream = store.CreateFile(uploadLocation))
+                    {
+                        byte[] buffer = new byte[1 << 10];
+                        int bytesRead;
+                        while ((bytesRead = e.ChosenPhoto.Read(buffer, 0, buffer.Length)) > 0)
+                        {
+                            stream.Write(buffer, 0, bytesRead);
+                        }
+                    }
+                }
+            };
+
+            worker.RunWorkerCompleted += (o, args) =>
+            {
+                LiveConnectClient uploadClient = new LiveConnectClient(App.Session);
+                uploadClient.BackgroundUploadCompleted +=
+                    new EventHandler<LiveOperationCompletedEventArgs>(uploadClient_BackgroundUploadCompleted);
+
+                string userState = "myUserState";  // arbitrary string to identify the request.
+                uploadClient.BackgroundUpload(SelectedAlbum.ID, new Uri(uploadLocation, UriKind.RelativeOrAbsolute), userState);
+            };
+
+            worker.RunWorkerAsync();
         }
 
-        void uploadClient_UploadCompleted(object sender, LiveOperationCompletedEventArgs e)
+        private void uploadClient_BackgroundUploadCompleted(object sender, LiveOperationCompletedEventArgs e)
         {
             if (e.Error == null)
             {
-                
                 Deployment.Current.Dispatcher.BeginInvoke(() => DownloadPictures(SelectedAlbum));
-               
             }
         }
     }
