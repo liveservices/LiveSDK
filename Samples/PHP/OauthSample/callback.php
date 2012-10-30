@@ -174,7 +174,7 @@ function readRefreshToken()
 
 function saveRefreshToken($refreshToken)
 {
-    // save the refresh token associated with the user id on the site.
+    // save the refresh token and associate it with the user identified by your site credential system.
 }
 
 function handleTokenResponse($token, $error = null)

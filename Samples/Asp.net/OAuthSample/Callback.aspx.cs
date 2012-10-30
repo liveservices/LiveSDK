@@ -72,7 +72,7 @@
 
         private static void SaveRefreshToken(string refreshToken)
         {
-            // save the refresh token associated with the user id on the site.
+            // save the refresh token and associate it with the user identified by your site credential system.
         }
 
         private static void RequestAccessTokenByVerifier(string verifier, out OAuthToken token, out OAuthError error)
