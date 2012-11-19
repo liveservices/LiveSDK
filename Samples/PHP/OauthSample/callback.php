@@ -56,7 +56,7 @@ function sendRequest(
     $url,
     $method = 'GET',
     $data = array(),
-    $headers = array('Content-type: application/x-www-form-urlencoded;charset=UFT-8'))
+    $headers = array('Content-type: application/x-www-form-urlencoded;charset=UTF-8'))
 {
     $context = stream_context_create(array
                                      (
