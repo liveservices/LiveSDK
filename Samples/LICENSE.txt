@@ -9,7 +9,7 @@ for this software, unless other terms accompany those items.  If so, those terms
 BY USING THE SOFTWARE, YOU ACCEPT THESE TERMS.  IF YOU DO NOT ACCEPT THEM, DO NOT USE THE SOFTWARE.
 If you comply with these license terms, you have the rights below.
 1.	PRE-RELEASE SOFTWARE.  This software is a pre-release version.  It may not operate correctly or work the way a final version of the software will.  Microsoft may change it for the final, commercial version.  We also may not release a commercial version.  IF YOU DECIDE TO MAKE USE OF ANY OF THE RIGHTS UNDER THIS AGREEMENT YOU AGREE THAT IT IS AT YOUR SOLE DISCRETION AND YOU ASSUME ALL RESPONSIBILITY FOR AND RISK OF ANY AND ALL DAMAGES THAT MAY RESULT FROM OR IN CONNECTION WITH THE SOFTWARE, INCLUDING WITHOUT LIMITATION, THE UNAVAILABILITY OR INTERUPTION OF OPERATIONS OR THE LOSS OF ANY DATA OR OTHER CONTENT.
-2.	TERM.  The term of this agreement is until December 31, 2013, or commercial release of the software, whichever is first.
+2.	TERM.  The term of this agreement is until December 31, 2014, or commercial release of the software, whichever is first.
 3.	INSTALLATION, USE RIGHTS AND RESTRICTIONS. You may install and use any number of copies of the software on your premises as follows:
 a.	Internal Production Use.  If you comply with the rest of these license terms, you may use the software to design, develop and test your programs in a live production environment for your internal use, provided that:
 i.	you take adequate precautionary measures to back up and protect your data; 
