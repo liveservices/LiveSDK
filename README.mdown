@@ -1,3 +1,9 @@
+Annoucement: There's a new OneDrive SDK
+================
+The Live SDK has been replaced by the [OneDrive API](https://dev.onedrive.com) and 
+[OneDrive SDKs](https://github.com/OneDrive?query=sdk). All new projects
+should use the OneDrive API to integrate with OneDrive instead of Live SDK.
+
 Live SDK Samples
 ===========================
 
