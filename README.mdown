@@ -1,8 +1,7 @@
-Annoucement: There's a new OneDrive SDK
+Annoucement: Live SDK is deprecated
 ================
-The Live SDK has been replaced by the [OneDrive API](https://dev.onedrive.com) and 
-[OneDrive SDKs](https://github.com/OneDrive?query=sdk). All new projects
-should use the OneDrive API to integrate with OneDrive instead of Live SDK.
+The Live SDK has been replaced by the [Microsoft Graph](https://graph.microsoft.com) and [Microsoft Grpah SDKs](https://developer.microsoft.com/en-us/graph/code-samples-and-sdks).
+New projects should be built using these tools and existing projects should work on migrating to Microsoft Graph.
 
 Live SDK Samples
 ===========================
